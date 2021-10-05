@@ -38,6 +38,16 @@ namespace Project_Milestone2_PRG282
         {
             SqlConnection MyCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|StudentsDB.mdf;Integrated Security=True");
             MyCon.Open();
+
+            MyCon.Close();
+        }
+
+        private void btnSign_in_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm Main = new MainForm();
+            Main.ShowDialog();
+            this.Dispose();
         }
     }
 }
