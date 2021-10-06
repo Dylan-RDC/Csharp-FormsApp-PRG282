@@ -62,5 +62,10 @@ namespace Project_Milestone2_PRG282
 
             }
         }
+
+        private void lblDisplayCRUD_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
