@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Project_Milestone2_PRG282.BusinessLayer;
 
 namespace Project_Milestone2_PRG282
 {
@@ -46,8 +47,21 @@ namespace Project_Milestone2_PRG282
         {
             this.Hide();
             MainForm Main = new MainForm();
-            Main.ShowDialog();
-            this.Dispose();
+
+
+            FileMethods fm = new FileMethods();
+
+            List<User> users;
+
+            users = fm.Read();
+
+            foreach (var item in users)
+            {
+                MessageBox.Show(string.Format("Username: {0}\nPassword: {1}",item.Name,item.Password));
+            }
+
+           // Main.ShowDialog();
+           // this.Dispose();
         }
     }
 }

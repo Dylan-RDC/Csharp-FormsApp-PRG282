@@ -63,8 +63,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessLayer\Module.cs" />
-    <Compile Include="DataAccessLayer\Student.cs" />
+    <Compile Include="BusinessLayer\FileMethods.cs" />
+    <Compile Include="BusinessLayer\Module.cs" />
+    <Compile Include="BusinessLayer\Student.cs" />
+    <Compile Include="BusinessLayer\User.cs" />
+    <Compile Include="DataAccessLayer\FileHandler.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +127,7 @@
     <None Include="Images\MainImage.jpg" />
     <None Include="Images\Image2.jpg" />
     <None Include="Images\Image1.jpg" />
+    <Content Include="AccountInfo.txt" />
     <Content Include="StudentsDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -132,8 +136,6 @@
       <DependentUpon>StudentsDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
