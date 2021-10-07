@@ -25,7 +25,7 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             {
                 sqlConnection.Open();
 
-                string query3 = "delete from Students where StudentId= '" + num + "'";
+                string query3 = "DELETE from Students where StudentNo= '" + num + "'";
 
                 SqlCommand command = new SqlCommand(query3, sqlConnection);
                 command.ExecuteNonQuery();
@@ -56,7 +56,6 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 {
                     while (reader.Read())
                     {
-
                         stud_List.Add(new Student(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[4].ToString(), reader[5].ToString() , reader[5].ToString() , Convert.ToDateTime(reader[3])));
                     }
                 }
