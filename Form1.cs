@@ -45,23 +45,65 @@ namespace Project_Milestone2_PRG282
 
         private void btnSign_in_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            MainForm Main = new MainForm();
+
+            string username = txtLogInUserName.Text;
+            string password = txtLogInPassword.Text;
+
+
+
+            FileMethods fm = new FileMethods();
+            string result = fm.ValidateLoginInputs(username, password);
+            if (result == "G")
+            {
+                if (fm.CheckCredentials(username,password))
+                {
+                    this.Hide();
+                    Main.ShowDialog();
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                MessageBox.Show(result);
+            }
+
+          
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            string username = txtCreateUsername.Text;
+            string password = txtCreatePassword.Text;
+            string added;
             MainForm Main = new MainForm();
 
 
             FileMethods fm = new FileMethods();
-
-            List<User> users;
-
-            users = fm.Read();
-
-            foreach (var item in users)
+            string result = fm.ValidateNewLogin(username, password);
+            if (result == "G")
             {
-                MessageBox.Show(string.Format("Username: {0}\nPassword: {1}",item.Name,item.Password));
+                if ((added = fm.Add_User(new User(username, password)))== "Failed to create")
+                {
+                    MessageBox.Show(added);
+                }
+                else
+                {
+                    MessageBox.Show(added);
+                    this.Hide();
+                    Main.ShowDialog();
+                    this.Dispose();
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show(result);
             }
 
-           // Main.ShowDialog();
-           // this.Dispose();
+            
+
+
         }
     }
 }
