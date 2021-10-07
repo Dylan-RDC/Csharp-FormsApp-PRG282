@@ -52,6 +52,10 @@ namespace Project_Milestone2_PRG282.BusinessLayer
                 {
                     throw new Exception("Please ensure both password and username are entered");
                 }
+                if (username.Length<3)
+                {
+                    throw new Exception("Username must be more than 3 characters long");
+                }
                 if (username.Any(Char.IsWhiteSpace))
                 {
                     throw new Exception("Username cannot contain spaces");
