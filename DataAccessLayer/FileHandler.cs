@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Project_Milestone2_PRG282.BusinessLayer;
 using System.IO;
-using System.Windows.Forms;
 
 namespace Project_Milestone2_PRG282.DataAccessLayer
 {
@@ -17,7 +16,7 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
         {
             List<User> users = new List<User>();
 
-            MessageBox.Show(System.AppDomain.CurrentDomain.BaseDirectory + @"\\AccountInfo.txt") ;
+            //MessageBox.Show(System.AppDomain.CurrentDomain.BaseDirectory + @"\\AccountInfo.txt") ;
 
             if (File.Exists(path))
             {
@@ -25,14 +24,23 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 {
                     string txt;
                     while ((txt = reader.ReadLine())!=null)
-                    {
-                        users.Add(new User(txt.Substring(0, txt.IndexOf("#")), txt.Substring(txt.IndexOf("#"), txt.Length - txt.IndexOf("#"))));
+                    {;
+                        users.Add(new User(txt.Substring(0, txt.IndexOf("#")), txt.Substring(txt.IndexOf("#")+1, txt.Length - txt.IndexOf("#")-1)));
                     }
                 }
             }
             return users;
+        }
 
-
+        public string Add_User(User newUser)
+        {
+            if (File.Exists(path))
+            {
+                
+                File.AppendAllText(path,string.Format("{0}#{1}\n",newUser.Name,newUser.Password));
+                return "Succesfully added";
+            }
+            return "Failed to create";
         }
 
 
