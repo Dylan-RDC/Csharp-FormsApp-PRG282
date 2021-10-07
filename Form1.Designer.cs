@@ -55,7 +55,7 @@
             this.tabControl1.Controls.Add(this.SignIn_Tab);
             this.tabControl1.Controls.Add(this.SignUp_Tab);
             this.tabControl1.Location = new System.Drawing.Point(0, 2);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(691, 450);
@@ -72,9 +72,9 @@
             this.SignIn_Tab.Controls.Add(this.txtLogInPassword);
             this.SignIn_Tab.Controls.Add(this.txtLogInUserName);
             this.SignIn_Tab.Location = new System.Drawing.Point(4, 25);
-            this.SignIn_Tab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SignIn_Tab.Margin = new System.Windows.Forms.Padding(4);
             this.SignIn_Tab.Name = "SignIn_Tab";
-            this.SignIn_Tab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SignIn_Tab.Padding = new System.Windows.Forms.Padding(4);
             this.SignIn_Tab.Size = new System.Drawing.Size(683, 421);
             this.SignIn_Tab.TabIndex = 0;
             this.SignIn_Tab.Text = "Sign in";
@@ -83,7 +83,7 @@
             // btnSign_in
             // 
             this.btnSign_in.Location = new System.Drawing.Point(268, 278);
-            this.btnSign_in.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSign_in.Margin = new System.Windows.Forms.Padding(4);
             this.btnSign_in.Name = "btnSign_in";
             this.btnSign_in.Size = new System.Drawing.Size(100, 28);
             this.btnSign_in.TabIndex = 7;
@@ -106,7 +106,7 @@
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(11, 378);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 28);
             this.btnExit.TabIndex = 5;
@@ -142,8 +142,9 @@
             // 
             this.txtLogInPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogInPassword.Location = new System.Drawing.Point(287, 239);
-            this.txtLogInPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogInPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogInPassword.Name = "txtLogInPassword";
+            this.txtLogInPassword.PasswordChar = '*';
             this.txtLogInPassword.Size = new System.Drawing.Size(180, 30);
             this.txtLogInPassword.TabIndex = 1;
             // 
@@ -151,7 +152,7 @@
             // 
             this.txtLogInUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogInUserName.Location = new System.Drawing.Point(287, 196);
-            this.txtLogInUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogInUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogInUserName.Name = "txtLogInUserName";
             this.txtLogInUserName.Size = new System.Drawing.Size(180, 30);
             this.txtLogInUserName.TabIndex = 0;
@@ -167,9 +168,9 @@
             this.SignUp_Tab.Controls.Add(this.txtCreateUsername);
             this.SignUp_Tab.Controls.Add(this.button1);
             this.SignUp_Tab.Location = new System.Drawing.Point(4, 25);
-            this.SignUp_Tab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SignUp_Tab.Margin = new System.Windows.Forms.Padding(4);
             this.SignUp_Tab.Name = "SignUp_Tab";
-            this.SignUp_Tab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SignUp_Tab.Padding = new System.Windows.Forms.Padding(4);
             this.SignUp_Tab.Size = new System.Drawing.Size(683, 421);
             this.SignUp_Tab.TabIndex = 1;
             this.SignUp_Tab.Text = "Sign Up";
@@ -178,7 +179,7 @@
             // btnSignUp
             // 
             this.btnSignUp.Location = new System.Drawing.Point(268, 278);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(100, 28);
             this.btnSignUp.TabIndex = 9;
@@ -226,7 +227,7 @@
             // 
             this.txtCreatePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCreatePassword.Location = new System.Drawing.Point(287, 239);
-            this.txtCreatePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCreatePassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtCreatePassword.Name = "txtCreatePassword";
             this.txtCreatePassword.Size = new System.Drawing.Size(180, 30);
             this.txtCreatePassword.TabIndex = 5;
@@ -235,7 +236,7 @@
             // 
             this.txtCreateUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCreateUsername.Location = new System.Drawing.Point(287, 196);
-            this.txtCreateUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCreateUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtCreateUsername.Name = "txtCreateUsername";
             this.txtCreateUsername.Size = new System.Drawing.Size(180, 30);
             this.txtCreateUsername.TabIndex = 4;
@@ -243,7 +244,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(11, 378);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 1;
@@ -257,7 +258,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 441);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(703, 488);
             this.MinimumSize = new System.Drawing.Size(703, 488);
             this.Name = "Form1";
