@@ -67,6 +67,7 @@
     <Compile Include="BusinessLayer\Module.cs" />
     <Compile Include="BusinessLayer\Student.cs" />
     <Compile Include="BusinessLayer\User.cs" />
+    <Compile Include="DataAccessLayer\DataHandler.cs" />
     <Compile Include="DataAccessLayer\FileHandler.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

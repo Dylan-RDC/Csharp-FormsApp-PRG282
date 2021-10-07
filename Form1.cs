@@ -45,7 +45,12 @@ namespace Project_Milestone2_PRG282
 
         private void btnSign_in_Click(object sender, EventArgs e)
         {
+            
             MainForm Main = new MainForm();
+            
+            //this.Hide();
+            //Main.ShowDialog(); //THESE CODE ARE JUST FOR TEST PURPOSES
+            //this.Dispose();
 
             string username = txtLogInUserName.Text;
             string password = txtLogInPassword.Text;
