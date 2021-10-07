@@ -62,6 +62,10 @@ namespace Project_Milestone2_PRG282
                     Main.ShowDialog();
                     this.Dispose();
                 }
+                else
+                {
+                    MessageBox.Show("Incorrect credentials");
+                }
             }
             else
             {
