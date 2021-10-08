@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Project_Milestone2_PRG282.BusinessLayer;
+using System.IO;
 
 namespace Project_Milestone2_PRG282.DataAccessLayer
 {
     class DataHandler
     {
-        static string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|StudentsDB.mdf;Integrated Security = True";
+        //Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=D:\BC\SECONDYEAR\PRG282\PROJECTS\BIN\DEBUG\STUDENTSDB.MDF;Integrated Security=True
+        static string Path = $"{ Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName}";
+        static string connectionString = $"Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename={Path}\\StudentsDB.mdf;Integrated Security = True";
         SqlConnection sqlConnection;
 
         List<Student> stud_List = new List<Student>();
@@ -76,7 +79,7 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 {
                     while (reader.Read())
                     {
-                        stud_List.Add(new Student(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[4].ToString(), reader[5].ToString() , reader[5].ToString() , Convert.ToDateTime(reader[3])));
+                        stud_List.Add(new Student(reader[0].ToString(),reader[1].ToString(), reader[2].ToString(), reader[4].ToString(), reader[5].ToString() , reader[5].ToString() , Convert.ToDateTime(reader[3]),reader[6].ToString()));
                     }
                 }
             }

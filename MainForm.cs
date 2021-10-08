@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project_Milestone2_PRG282.DataAccessLayer;
 using Project_Milestone2_PRG282.BusinessLayer;
+using System.IO;
 
 namespace Project_Milestone2_PRG282
 {
@@ -29,7 +30,7 @@ namespace Project_Milestone2_PRG282
             int i = 0;
             foreach (Student item in s)
             {
-                
+
             }
 
             lblDisplayCRUD.Text = "Insert a new student.";
@@ -72,7 +73,7 @@ namespace Project_Milestone2_PRG282
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete *SOMEONE* from the database?" , "WARNING" , MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete *SOMEONE* from the database?", "WARNING", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
 
             }
@@ -81,6 +82,31 @@ namespace Project_Milestone2_PRG282
         private void lblDisplayCRUD_Click(object sender, EventArgs e)
         {
 
+        }
+        string filename;
+        private void btnPath_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog odf = new OpenFileDialog() { Filter = "Images|*.jpg;*.png;*.jpeg", ValidateNames = true, Multiselect = false })
+
+            {
+                if (odf.ShowDialog() == DialogResult.OK)
+                {
+                    filename = odf.FileName;
+                    lblFilePath.Text = filename;
+                    picStudent.Image = Image.FromFile(filename);
+
+                    string name = Path.GetFileName(filename);
+                    string[] name1 = name.Split('.');
+                    picStudent.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+            }
+        }
+
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+            //if (txtStudName.Text != "" && txtStudSurname.Text != "" && txtPhone.Text != "" && cmbGender.SelectedIndex != -1 && richAddress.Text != "" && richModuleCodes.Text != "") ;
+            Student tempStud = new Student("999",txtStudName.Text,txtStudSurname.Text,txtPhone.Text,richAddress.Text,cmbGender.Text,dtDOB.Value,lblFilePath.Text);
+            MessageBox.Show(tempStud.insertToDB());
         }
     }
 }

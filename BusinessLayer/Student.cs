@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project_Milestone2_PRG282.DataAccessLayer;
 
 namespace Project_Milestone2_PRG282.BusinessLayer
 {
@@ -17,15 +18,16 @@ namespace Project_Milestone2_PRG282.BusinessLayer
         string studNumber, studName, studSurname, phone, address, gender;
         DateTime dateOfbirth;
 
-        public Student(string studNumber, string studName, string studSurname, string phone, string address, string gender, DateTime dateOfbirth)
+        public Student(string studNum,string studName, string studSurname, string phone, string address, string gender, DateTime dateOfbirth,string imagePath)
         {
-            this.StudNumber = studNumber;
+            this.StudNumber = studNum;
             this.StudName = studName;
             this.StudSurname = studSurname;
             this.Phone = phone;
             this.Address = address;
             this.Gender = gender;
             this.DateOfbirth = dateOfbirth;
+            this.ImagePath = imagePath;
         }
 
         public string StudNumber { get => studNumber; set => studNumber = value; }
@@ -34,8 +36,14 @@ namespace Project_Milestone2_PRG282.BusinessLayer
         public string Phone { get => phone; set => phone = value; }
         public string Address { get => address; set => address = value; }
         public string Gender { get => gender; set => gender = value; }
+        public string ImagePath { get; set; }
         public DateTime DateOfbirth { get => dateOfbirth; set => dateOfbirth = value; }
 
+        public string insertToDB()
+        {
+            DataHandler dh = new DataHandler();
+            return dh.insertStudent(StudName, StudSurname, DateOfbirth, Phone, Address, Gender, ImagePath);
+        }
         public int CompareTo(Student other)
         {
             return this.StudName.CompareTo(other.StudName);
@@ -43,7 +51,7 @@ namespace Project_Milestone2_PRG282.BusinessLayer
         
         public string toString()
         {
-            return $"Student number: {this.studNumber}\tName: {this.studName}\tSurname: {this.studSurname}\tPhone number: {Phone}\tAddress: {address}\tGender: {Gender}\tDate of Birth: {dateOfbirth}";
+            return $"Student number: {studNumber}\tName: {studName}\tSurname: {studSurname}\tPhone number: {Phone}\tAddress: {address}\tGender: {Gender}\tDate of Birth: {dateOfbirth}";
         }
     }
 
