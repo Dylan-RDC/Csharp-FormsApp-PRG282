@@ -17,6 +17,7 @@ namespace Project_Milestone2_PRG282
 {
     public partial class MainForm : Form
     {
+        public static Form Creator;
         List<Student> s = new List<Student>();
         public MainForm()
         {
@@ -100,7 +101,7 @@ namespace Project_Milestone2_PRG282
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             //if (txtStudName.Text != "" && txtStudSurname.Text != "" && txtPhone.Text != "" && cmbGender.SelectedIndex != -1 && richAddress.Text != "" && richModuleCodes.Text != "") ;
-            Student tempStud = new Student("999",txtStudName.Text,txtStudSurname.Text,txtPhone.Text,richAddress.Text,cmbGender.Text,dtDOB.Value,lblFilePath.Text);
+            Student tempStud = new Student(txtStudentNum.Text,txtStudName.Text,txtStudSurname.Text,txtPhone.Text,richAddress.Text,cmbGender.Text,dtDOB.Value,lblFilePath.Text);
             MessageBox.Show(tempStud.insertToDB());
             s = dh.getStudent();
             int i = 0;
@@ -129,11 +130,6 @@ namespace Project_Milestone2_PRG282
             }
             if (!success)
                 MessageBox.Show("Update Failed");
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -205,6 +201,11 @@ namespace Project_Milestone2_PRG282
                 dgvDisplay.Rows[dgvDisplay.CurrentCell.RowIndex + 1].Selected = true;
                 bs.MoveNext();
             }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Creator.Show();
         }
     }
 }

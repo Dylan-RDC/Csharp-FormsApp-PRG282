@@ -38,15 +38,16 @@ namespace Project_Milestone2_PRG282
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SqlConnection MyCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|StudentsDB.mdf;Integrated Security=True");
+            /*SqlConnection MyCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|StudentsDB.mdf;Integrated Security=True");
             MyCon.Open();
 
-            MyCon.Close();
+            MyCon.Close();*/
         }
 
         private void btnSign_in_Click(object sender, EventArgs e)
         {
-            
+
+            MainForm.Creator = this;
             MainForm Main = new MainForm();
             
             //this.Hide();
@@ -64,7 +65,8 @@ namespace Project_Milestone2_PRG282
                 {
                     this.Hide();
                     Main.ShowDialog();
-                    this.Dispose();
+                    //this.Dispose();Lol this broke something
+
                 }
                 else
                 {

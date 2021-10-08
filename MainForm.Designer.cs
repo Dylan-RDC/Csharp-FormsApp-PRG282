@@ -105,7 +105,6 @@ namespace Project_Milestone2_PRG282
             this.dgvDisplay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDisplay.Size = new System.Drawing.Size(477, 226);
             this.dgvDisplay.TabIndex = 0;
-            this.dgvDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvDisplay.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // btnFirst
@@ -681,6 +680,7 @@ namespace Project_Milestone2_PRG282
             this.MinimumSize = new System.Drawing.Size(917, 569);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
             this.tabControl1.ResumeLayout(false);

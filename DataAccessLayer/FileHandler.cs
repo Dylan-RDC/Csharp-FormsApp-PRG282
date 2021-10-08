@@ -10,7 +10,8 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
 {
     class FileHandler
     {
-        string path = @"D:\BC\SecondYear\PRG282\Projects" +  @"\AccountInfo.txt";
+        static string Path = $"{ Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName}";
+        string path = Path+ @"\AccountInfo.txt";
         //C:\Users\Dylan\Desktop\PRG282\PRG281_Project\Project_Rep\Project_Milestone2_PRG282
         //D:\BC\SecondYear\PRG282\Projects
         public List<User> Read_Users()
