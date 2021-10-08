@@ -69,6 +69,12 @@
     <Compile Include="BusinessLayer\User.cs" />
     <Compile Include="DataAccessLayer\DataHandler.cs" />
     <Compile Include="DataAccessLayer\FileHandler.cs" />
+    <Compile Include="ElSplasho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElSplasho.Designer.cs">
+      <DependentUpon>ElSplasho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ElSplasho.resx">
+      <DependentUpon>ElSplasho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

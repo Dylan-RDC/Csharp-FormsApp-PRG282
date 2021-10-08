@@ -14,6 +14,7 @@ namespace Project_Milestone2_PRG282
 {
     public partial class Form1 : Form
     {
+        public static Form Creator;
         public Form1()
         {
             InitializeComponent();
@@ -117,6 +118,11 @@ namespace Project_Milestone2_PRG282
         {
             txtLogInUserName.Text = "Devs";
             txtLogInPassword.Text = "PasswordForDevs@123";
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Creator.Show();
         }
     }
 }

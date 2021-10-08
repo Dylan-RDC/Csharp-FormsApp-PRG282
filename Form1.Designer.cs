@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.SignIn_Tab = new System.Windows.Forms.TabPage();
+            this.btnCheat = new System.Windows.Forms.Button();
             this.btnSign_in = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.txtCreatePassword = new System.Windows.Forms.TextBox();
             this.txtCreateUsername = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnCheat = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.SignIn_Tab.SuspendLayout();
             this.SignUp_Tab.SuspendLayout();
@@ -74,11 +74,21 @@
             this.SignIn_Tab.Controls.Add(this.txtLogInUserName);
             this.SignIn_Tab.Location = new System.Drawing.Point(4, 22);
             this.SignIn_Tab.Name = "SignIn_Tab";
-            this.SignIn_Tab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.SignIn_Tab.Padding = new System.Windows.Forms.Padding(3);
             this.SignIn_Tab.Size = new System.Drawing.Size(510, 340);
             this.SignIn_Tab.TabIndex = 0;
             this.SignIn_Tab.Text = "Sign in";
             this.SignIn_Tab.UseVisualStyleBackColor = true;
+            // 
+            // btnCheat
+            // 
+            this.btnCheat.Location = new System.Drawing.Point(464, 6);
+            this.btnCheat.Name = "btnCheat";
+            this.btnCheat.Size = new System.Drawing.Size(43, 19);
+            this.btnCheat.TabIndex = 8;
+            this.btnCheat.Text = "Cheat";
+            this.btnCheat.UseVisualStyleBackColor = true;
+            this.btnCheat.Click += new System.EventHandler(this.btnCheat_Click);
             // 
             // btnSign_in
             // 
@@ -162,7 +172,7 @@
             this.SignUp_Tab.Controls.Add(this.button1);
             this.SignUp_Tab.Location = new System.Drawing.Point(4, 22);
             this.SignUp_Tab.Name = "SignUp_Tab";
-            this.SignUp_Tab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.SignUp_Tab.Padding = new System.Windows.Forms.Padding(3);
             this.SignUp_Tab.Size = new System.Drawing.Size(510, 340);
             this.SignUp_Tab.TabIndex = 1;
             this.SignUp_Tab.Text = "Sign Up";
@@ -237,16 +247,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnCheat
-            // 
-            this.btnCheat.Location = new System.Drawing.Point(464, 6);
-            this.btnCheat.Name = "btnCheat";
-            this.btnCheat.Size = new System.Drawing.Size(43, 19);
-            this.btnCheat.TabIndex = 8;
-            this.btnCheat.Text = "Cheat";
-            this.btnCheat.UseVisualStyleBackColor = true;
-            this.btnCheat.Click += new System.EventHandler(this.btnCheat_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +258,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.SignIn_Tab.ResumeLayout(false);

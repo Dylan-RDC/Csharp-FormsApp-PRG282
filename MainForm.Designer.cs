@@ -607,7 +607,6 @@ namespace Project_Milestone2_PRG282
             this.lblDisplayCRUD.Size = new System.Drawing.Size(42, 35);
             this.lblDisplayCRUD.TabIndex = 7;
             this.lblDisplayCRUD.Text = "...";
-            this.lblDisplayCRUD.Click += new System.EventHandler(this.lblDisplayCRUD_Click);
             // 
             // label10
             // 

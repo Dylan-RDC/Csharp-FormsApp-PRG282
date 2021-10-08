@@ -78,11 +78,6 @@ namespace Project_Milestone2_PRG282
 
             }
         }
-
-        private void lblDisplayCRUD_Click(object sender, EventArgs e)
-        {
-
-        }
         string filename;
         private void btnPath_Click(object sender, EventArgs e)
         {
