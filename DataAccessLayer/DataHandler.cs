@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Project_Milestone2_PRG282.BusinessLayer;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Project_Milestone2_PRG282.DataAccessLayer
 {
@@ -24,7 +25,7 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             if (sqlConnection.State != ConnectionState.Open)
                 sqlConnection.Open();
             string query = $"INSERT INTO Students(FirstName,LastName,DOB,Phone,Address,Gender,StudentImage) " +
-            $"SELECT  '{FirstName}','{LastName}','{DOB}','{Phone}','{Address}','{Gender}',StudentImage FROM OPENROWSET(BULK N'{StudentImagePath}', SINGLE_BLOB)AS ImageSource(StudentImage)";
+            $"SELECT  '{FirstName}','{LastName}','{DOB:yyyy-MM-dd}','{Phone}','{Address}','{Gender}',StudentImage FROM OPENROWSET(BULK N'{StudentImagePath}', SINGLE_BLOB)AS ImageSource(StudentImage)";
             SqlCommand cmd = new SqlCommand(query, sqlConnection);
             try
             {
@@ -40,6 +41,30 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 return "Insert failed";
             }
             return "Insert failed";
+        }
+        public string UpdateStudent(string studNumber,string FirstName, string LastName, DateTime DOB, string Phone, string Address, string Gender)
+        {
+            sqlConnection = new SqlConnection(connectionString);
+            if (sqlConnection.State != ConnectionState.Open)
+                sqlConnection.Open();
+            string query = $"UPDATE Students " +
+            $"SET  FirstName = '{FirstName}',LastName = '{LastName}',DOB = '{DOB:yyyy-MM-dd}',Phone ='{Phone}',Address = '{Address}',Gender = '{Gender}' WHERE StudentNo = {studNumber}";
+            Clipboard.SetText(query);
+            SqlCommand cmd = new SqlCommand(query, sqlConnection);
+            try
+            {
+                int rows = cmd.ExecuteNonQuery();
+                if (rows != 0)
+                {
+                    return "Success";
+                }
+            }
+            catch (Exception)
+            {
+
+                return "Update failed";
+            }
+            return "Update fails";
         }
         public string Delete(int num) // Delete
         {
@@ -79,7 +104,7 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 {
                     while (reader.Read())
                     {
-                        stud_List.Add(new Student(reader[0].ToString(),reader[1].ToString(), reader[2].ToString(), reader[4].ToString(), reader[5].ToString() , reader[5].ToString() , Convert.ToDateTime(reader[3]),reader[6].ToString()));
+                        stud_List.Add(new Student(reader[0].ToString(),reader[1].ToString(), reader[2].ToString(), reader[4].ToString(), reader[5].ToString() , reader[6].ToString() , Convert.ToDateTime(reader[3]),reader[7].ToString()));
                     }
                 }
             }

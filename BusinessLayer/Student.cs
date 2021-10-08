@@ -44,6 +44,11 @@ namespace Project_Milestone2_PRG282.BusinessLayer
             DataHandler dh = new DataHandler();
             return dh.insertStudent(StudName, StudSurname, DateOfbirth, Phone, Address, Gender, ImagePath);
         }
+        public string UpdateInDB()
+        {
+            DataHandler dh = new DataHandler();
+            return dh.UpdateStudent(StudNumber,StudName, StudSurname, DateOfbirth, Phone, Address, Gender);
+        }
         public int CompareTo(Student other)
         {
             return this.StudName.CompareTo(other.StudName);

@@ -29,13 +29,15 @@ namespace Project_Milestone2_PRG282
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDisplay = new System.Windows.Forms.DataGridView();
             this.btnFirst = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblFilePath = new System.Windows.Forms.Label();
+            this.btnPath = new System.Windows.Forms.Button();
             this.richModuleCodes = new System.Windows.Forms.RichTextBox();
             this.btnResetStudent = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
@@ -57,52 +59,54 @@ namespace Project_Milestone2_PRG282
             this.txtStudName = new System.Windows.Forms.TextBox();
             this.txtStudentNum = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.redModules = new System.Windows.Forms.RichTextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.redAddress = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtDate = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PreviewPic = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cbbGender = new System.Windows.Forms.ComboBox();
+            this.edtPhone = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.edtSurname = new System.Windows.Forms.TextBox();
+            this.edtName = new System.Windows.Forms.TextBox();
+            this.edtStudNum = new System.Windows.Forms.TextBox();
             this.lblDisplayCRUD = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnPath = new System.Windows.Forms.Button();
-            this.lblFilePath = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStudent)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PreviewPic)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDisplay
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(405, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(477, 226);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvDisplay.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDisplay.Location = new System.Drawing.Point(405, 62);
+            this.dgvDisplay.Name = "dgvDisplay";
+            this.dgvDisplay.ReadOnly = true;
+            this.dgvDisplay.RowHeadersWidth = 51;
+            this.dgvDisplay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDisplay.Size = new System.Drawing.Size(477, 226);
+            this.dgvDisplay.TabIndex = 0;
+            this.dgvDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvDisplay.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // btnFirst
             // 
@@ -112,6 +116,7 @@ namespace Project_Milestone2_PRG282
             this.btnFirst.TabIndex = 2;
             this.btnFirst.Text = "<<";
             this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrevious
             // 
@@ -121,6 +126,7 @@ namespace Project_Milestone2_PRG282
             this.btnPrevious.TabIndex = 3;
             this.btnPrevious.Text = "<";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
@@ -130,6 +136,7 @@ namespace Project_Milestone2_PRG282
             this.btnNext.TabIndex = 4;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
@@ -139,6 +146,7 @@ namespace Project_Milestone2_PRG282
             this.btnLast.TabIndex = 5;
             this.btnLast.Text = ">>";
             this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // tabControl1
             // 
@@ -178,15 +186,34 @@ namespace Project_Milestone2_PRG282
             this.tabPage1.Controls.Add(this.txtStudentNum);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(335, 431);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Insert Student";
             // 
+            // lblFilePath
+            // 
+            this.lblFilePath.AutoSize = true;
+            this.lblFilePath.Location = new System.Drawing.Point(226, 122);
+            this.lblFilePath.Name = "lblFilePath";
+            this.lblFilePath.Size = new System.Drawing.Size(0, 13);
+            this.lblFilePath.TabIndex = 26;
+            this.lblFilePath.Visible = false;
+            // 
+            // btnPath
+            // 
+            this.btnPath.Location = new System.Drawing.Point(196, 155);
+            this.btnPath.Name = "btnPath";
+            this.btnPath.Size = new System.Drawing.Size(26, 19);
+            this.btnPath.TabIndex = 25;
+            this.btnPath.Text = "...";
+            this.btnPath.UseVisualStyleBackColor = true;
+            this.btnPath.Click += new System.EventHandler(this.btnPath_Click);
+            // 
             // richModuleCodes
             // 
             this.richModuleCodes.Location = new System.Drawing.Point(126, 334);
-            this.richModuleCodes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richModuleCodes.Margin = new System.Windows.Forms.Padding(2);
             this.richModuleCodes.Name = "richModuleCodes";
             this.richModuleCodes.Size = new System.Drawing.Size(128, 65);
             this.richModuleCodes.TabIndex = 24;
@@ -333,7 +360,6 @@ namespace Project_Milestone2_PRG282
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Student Number";
-            this.label1.Visible = false;
             // 
             // txtStudSurname
             // 
@@ -353,49 +379,49 @@ namespace Project_Milestone2_PRG282
             // 
             this.txtStudentNum.Location = new System.Drawing.Point(126, 36);
             this.txtStudentNum.Name = "txtStudentNum";
+            this.txtStudentNum.ReadOnly = true;
             this.txtStudentNum.Size = new System.Drawing.Size(128, 20);
             this.txtStudentNum.TabIndex = 0;
-            this.txtStudentNum.Visible = false;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Goldenrod;
-            this.tabPage2.Controls.Add(this.richTextBox2);
+            this.tabPage2.Controls.Add(this.redModules);
             this.tabPage2.Controls.Add(this.btnDelete);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.richTextBox1);
+            this.tabPage2.Controls.Add(this.redAddress);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.dateTimePicker1);
+            this.tabPage2.Controls.Add(this.dtDate);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.PreviewPic);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.cbbGender);
+            this.tabPage2.Controls.Add(this.edtPhone);
             this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.edtSurname);
+            this.tabPage2.Controls.Add(this.edtName);
+            this.tabPage2.Controls.Add(this.edtStudNum);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(335, 431);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update/Delete Student";
             // 
-            // richTextBox2
+            // redModules
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(129, 327);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(128, 65);
-            this.richTextBox2.TabIndex = 44;
-            this.richTextBox2.Text = "";
+            this.redModules.Location = new System.Drawing.Point(129, 327);
+            this.redModules.Margin = new System.Windows.Forms.Padding(2);
+            this.redModules.Name = "redModules";
+            this.redModules.Size = new System.Drawing.Size(128, 65);
+            this.redModules.TabIndex = 44;
+            this.redModules.Text = "";
             // 
             // btnDelete
             // 
@@ -424,6 +450,7 @@ namespace Project_Milestone2_PRG282
             this.btnUpdate.TabIndex = 41;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label12
             // 
@@ -443,13 +470,13 @@ namespace Project_Milestone2_PRG282
             this.label13.TabIndex = 39;
             this.label13.Text = "Student Address";
             // 
-            // richTextBox1
+            // redAddress
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(129, 256);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(128, 66);
-            this.richTextBox1.TabIndex = 38;
-            this.richTextBox1.Text = "";
+            this.redAddress.Location = new System.Drawing.Point(129, 256);
+            this.redAddress.Name = "redAddress";
+            this.redAddress.Size = new System.Drawing.Size(128, 66);
+            this.redAddress.TabIndex = 38;
+            this.redAddress.Text = "";
             // 
             // label14
             // 
@@ -469,12 +496,12 @@ namespace Project_Milestone2_PRG282
             this.label15.TabIndex = 35;
             this.label15.Text = "Gender";
             // 
-            // dateTimePicker1
+            // dtDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(129, 178);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(128, 20);
-            this.dateTimePicker1.TabIndex = 34;
+            this.dtDate.Location = new System.Drawing.Point(129, 178);
+            this.dtDate.Name = "dtDate";
+            this.dtDate.Size = new System.Drawing.Size(128, 20);
+            this.dtDate.TabIndex = 34;
             // 
             // label16
             // 
@@ -494,13 +521,13 @@ namespace Project_Milestone2_PRG282
             this.label17.TabIndex = 32;
             this.label17.Text = "Student Image";
             // 
-            // pictureBox1
+            // PreviewPic
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(129, 111);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 61);
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
+            this.PreviewPic.Location = new System.Drawing.Point(129, 111);
+            this.PreviewPic.Name = "PreviewPic";
+            this.PreviewPic.Size = new System.Drawing.Size(64, 61);
+            this.PreviewPic.TabIndex = 31;
+            this.PreviewPic.TabStop = false;
             // 
             // label18
             // 
@@ -520,20 +547,24 @@ namespace Project_Milestone2_PRG282
             this.label19.TabIndex = 29;
             this.label19.Text = "Student Name";
             // 
-            // comboBox1
+            // cbbGender
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(129, 204);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(71, 21);
-            this.comboBox1.TabIndex = 28;
+            this.cbbGender.FormattingEnabled = true;
+            this.cbbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Undefined"});
+            this.cbbGender.Location = new System.Drawing.Point(129, 204);
+            this.cbbGender.Name = "cbbGender";
+            this.cbbGender.Size = new System.Drawing.Size(71, 21);
+            this.cbbGender.TabIndex = 28;
             // 
-            // textBox2
+            // edtPhone
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 230);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 20);
-            this.textBox2.TabIndex = 27;
+            this.edtPhone.Location = new System.Drawing.Point(129, 230);
+            this.edtPhone.Name = "edtPhone";
+            this.edtPhone.Size = new System.Drawing.Size(128, 20);
+            this.edtPhone.TabIndex = 27;
             // 
             // label20
             // 
@@ -544,26 +575,27 @@ namespace Project_Milestone2_PRG282
             this.label20.TabIndex = 26;
             this.label20.Text = "Student Number";
             // 
-            // textBox3
+            // edtSurname
             // 
-            this.textBox3.Location = new System.Drawing.Point(129, 85);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(128, 20);
-            this.textBox3.TabIndex = 25;
+            this.edtSurname.Location = new System.Drawing.Point(129, 85);
+            this.edtSurname.Name = "edtSurname";
+            this.edtSurname.Size = new System.Drawing.Size(128, 20);
+            this.edtSurname.TabIndex = 25;
             // 
-            // textBox4
+            // edtName
             // 
-            this.textBox4.Location = new System.Drawing.Point(129, 59);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(128, 20);
-            this.textBox4.TabIndex = 24;
+            this.edtName.Location = new System.Drawing.Point(129, 59);
+            this.edtName.Name = "edtName";
+            this.edtName.Size = new System.Drawing.Size(128, 20);
+            this.edtName.TabIndex = 24;
             // 
-            // textBox5
+            // edtStudNum
             // 
-            this.textBox5.Location = new System.Drawing.Point(129, 33);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(128, 20);
-            this.textBox5.TabIndex = 23;
+            this.edtStudNum.Location = new System.Drawing.Point(129, 33);
+            this.edtStudNum.Name = "edtStudNum";
+            this.edtStudNum.ReadOnly = true;
+            this.edtStudNum.Size = new System.Drawing.Size(128, 20);
+            this.edtStudNum.TabIndex = 23;
             // 
             // lblDisplayCRUD
             // 
@@ -627,25 +659,6 @@ namespace Project_Milestone2_PRG282
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnPath
-            // 
-            this.btnPath.Location = new System.Drawing.Point(196, 155);
-            this.btnPath.Name = "btnPath";
-            this.btnPath.Size = new System.Drawing.Size(26, 19);
-            this.btnPath.TabIndex = 25;
-            this.btnPath.Text = "...";
-            this.btnPath.UseVisualStyleBackColor = true;
-            this.btnPath.Click += new System.EventHandler(this.btnPath_Click);
-            // 
-            // lblFilePath
-            // 
-            this.lblFilePath.AutoSize = true;
-            this.lblFilePath.Location = new System.Drawing.Point(226, 122);
-            this.lblFilePath.Name = "lblFilePath";
-            this.lblFilePath.Size = new System.Drawing.Size(0, 13);
-            this.lblFilePath.TabIndex = 26;
-            this.lblFilePath.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -664,20 +677,20 @@ namespace Project_Milestone2_PRG282
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnFirst);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDisplay);
             this.MaximumSize = new System.Drawing.Size(917, 569);
             this.MinimumSize = new System.Drawing.Size(917, 569);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStudent)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PreviewPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,7 +698,7 @@ namespace Project_Milestone2_PRG282
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDisplay;
         private System.Windows.Forms.Button btnFirst;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
@@ -723,23 +736,23 @@ namespace Project_Milestone2_PRG282
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox redAddress;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtDate;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PreviewPic;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox cbbGender;
+        private System.Windows.Forms.TextBox edtPhone;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox edtSurname;
+        private System.Windows.Forms.TextBox edtName;
+        private System.Windows.Forms.TextBox edtStudNum;
         private System.Windows.Forms.RichTextBox richModuleCodes;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox redModules;
         private System.Windows.Forms.Button btnPath;
         private System.Windows.Forms.Label lblFilePath;
     }
