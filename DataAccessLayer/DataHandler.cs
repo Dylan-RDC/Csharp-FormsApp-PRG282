@@ -15,7 +15,29 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
         SqlConnection sqlConnection;
 
         List<Student> stud_List = new List<Student>();
+        public string insertStudent(string FirstName, string LastName, DateTime DOB, string Phone, string Address, string Gender,string StudentImagePath)
+        {
+            sqlConnection = new SqlConnection(connectionString);
+            if (sqlConnection.State != ConnectionState.Open)
+                sqlConnection.Open();
+            string query = $"INSERT INTO Students(FirstName,LastName,DOB,Phone,Address,Gender,StudentImage) " +
+            $"SELECT  '{FirstName}','{LastName}','{DOB}','{Phone}','{Address}','{Gender}',StudentImage FROM OPENROWSET(BULK N'{StudentImagePath}', SINGLE_BLOB)AS ImageSource(StudentImage)";
+            SqlCommand cmd = new SqlCommand(query, sqlConnection);
+            try
+            {
+                int rows = cmd.ExecuteNonQuery();
+                if(rows != 0)
+                {
+                    return "Success";
+                }
+            }
+            catch (Exception)
+            {
 
+                return "Insert failed";
+            }
+            return "Insert failed";
+        }
         public string Delete(int num) // Delete
         {
             sqlConnection = new SqlConnection(connectionString);
