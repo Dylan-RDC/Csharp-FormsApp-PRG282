@@ -19,8 +19,6 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
         public string Delete(int num) // Delete
         {
             sqlConnection = new SqlConnection(connectionString);
-
-
             try
             {
                 sqlConnection.Open();

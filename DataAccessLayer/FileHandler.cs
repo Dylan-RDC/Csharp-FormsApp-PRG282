@@ -10,8 +10,9 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
 {
     class FileHandler
     {
-        string path = @"C:\Users\Dylan\Desktop\PRG282\PRG281_Project\Project_Rep\Project_Milestone2_PRG282" +  @"\AccountInfo.txt";
+        string path = @"D:\BC\SecondYear\PRG282\Projects" +  @"\AccountInfo.txt";
         //C:\Users\Dylan\Desktop\PRG282\PRG281_Project\Project_Rep\Project_Milestone2_PRG282
+        //D:\BC\SecondYear\PRG282\Projects
         public List<User> Read_Users()
         {
             List<User> users = new List<User>();

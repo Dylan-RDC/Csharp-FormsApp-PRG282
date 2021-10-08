@@ -41,6 +41,10 @@ namespace Project_Milestone2_PRG282.BusinessLayer
             return this.StudName.CompareTo(other.StudName);
         }
         
+        public string toString()
+        {
+            return $"Student number: {this.studNumber}\tName: {this.studName}\tSurname: {this.studSurname}\tPhone number: {Phone}\tAddress: {address}\tGender: {Gender}\tDate of Birth: {dateOfbirth}";
+        }
     }
 
 }

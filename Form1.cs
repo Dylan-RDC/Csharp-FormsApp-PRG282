@@ -55,8 +55,6 @@ namespace Project_Milestone2_PRG282
             string username = txtLogInUserName.Text;
             string password = txtLogInPassword.Text;
 
-
-
             FileMethods fm = new FileMethods();
             string result = fm.ValidateLoginInputs(username, password);
             if (result == "G")
@@ -113,6 +111,12 @@ namespace Project_Milestone2_PRG282
             
 
 
+        }
+
+        private void btnCheat_Click(object sender, EventArgs e)
+        {
+            txtLogInUserName.Text = "Devs";
+            txtLogInPassword.Text = "PasswordForDevs@123";
         }
     }
 }
