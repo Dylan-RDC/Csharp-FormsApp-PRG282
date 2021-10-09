@@ -33,5 +33,10 @@ namespace Project_Milestone2_PRG282
                 Application.Exit();
             HasShown = true;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
