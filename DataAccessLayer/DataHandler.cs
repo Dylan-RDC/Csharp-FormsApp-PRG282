@@ -148,5 +148,36 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 return "Failed";
             }
         }
+
+        public List<Module> ReadModules()
+        {
+            try
+            {
+                List<Module> modules = new List<Module>();
+                using (sqlConnection = new SqlConnection(connectionString))
+                {
+                    sqlConnection.Open();
+
+                    string query = "SELECT * FROM Modules";
+
+                    SqlCommand cmd = new SqlCommand(query, sqlConnection);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            modules.Add(new Module(reader["ModuleCode"].ToString(),reader["ModuleName"].ToString(),reader["ModuleDescription"].ToString(),reader["Links"].ToString()));
+                        }
+                    }
+
+                }
+                return modules;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

@@ -40,6 +40,33 @@ namespace Project_Milestone2_PRG282
                 case 0:
                     {
                         lblDisplayCRUD.Text = "Insert a new student.";
+
+                        
+                        List<Module> modules = dh.ReadModules();
+
+
+                        checkedListBox1.Items.Clear();
+                        foreach (var item in modules)//displays all modules//
+                        {
+                            checkedListBox1.Items.Add(item.ModuleCode);
+                        }
+
+                        foreach (string item in checkedListBox1.CheckedItems)//reads all checked items//
+                        {
+                            MessageBox.Show(item);
+                        }
+
+                        for (int i = 0; i < checkedListBox1.Items.Count ; i++)
+                        
+                        {
+                            if (checkedListBox1.Items[i].ToString() == txtSearch.Text)
+                            {
+                                checkedListBox1.SetItemChecked(i, true);//Dynamically checking the items
+                            }
+                        }
+
+
+
                         break;
                     }
                 case 1:
@@ -205,7 +232,7 @@ namespace Project_Milestone2_PRG282
         private void btnResetStudent_Click(object sender, EventArgs e)
         {
             richAddress.Clear();
-            richModuleCodes.Clear();
+            //richModuleCodes.Clear();
             txtPhone.Clear();
             txtStudName.Clear();
             cmbGender.SelectedIndex = -1;
@@ -216,7 +243,7 @@ namespace Project_Milestone2_PRG282
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         public void RefreshForm()
