@@ -80,23 +80,19 @@ namespace Project_Milestone2_PRG282
             this.edtName = new System.Windows.Forms.TextBox();
             this.edtStudNum = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.lblDisplayCRUD = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtMCode_Insert = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtMLink_Inser = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.txtMDescr_Inser = new System.Windows.Forms.TextBox();
             this.txtMName_Insert = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtMLink_Inser = new System.Windows.Forms.TextBox();
-            this.txtMCode_Insert = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.tbpUDModule = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.txtMCode_UD = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtMLink_UD = new System.Windows.Forms.TextBox();
@@ -105,8 +101,12 @@ namespace Project_Milestone2_PRG282
             this.label28 = new System.Windows.Forms.Label();
             this.txtMDescrp_UD = new System.Windows.Forms.TextBox();
             this.txtMName_UD = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.lblDisplayCRUD = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -119,7 +119,7 @@ namespace Project_Milestone2_PRG282
             // 
             // dgvDisplay
             // 
-            this.dgvDisplay.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dgvDisplay.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(215)))), ((int)(((byte)(198)))));
             this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplay.Location = new System.Drawing.Point(405, 62);
             this.dgvDisplay.Name = "dgvDisplay";
@@ -185,7 +185,7 @@ namespace Project_Milestone2_PRG282
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Goldenrod;
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(215)))), ((int)(((byte)(198)))));
             this.tabPage1.Controls.Add(this.checkedListBox1);
             this.tabPage1.Controls.Add(this.lblFilePath);
             this.tabPage1.Controls.Add(this.btnPath);
@@ -214,6 +214,7 @@ namespace Project_Milestone2_PRG282
             this.tabPage1.Size = new System.Drawing.Size(335, 431);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Insert Student";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // checkedListBox1
             // 
@@ -266,6 +267,7 @@ namespace Project_Milestone2_PRG282
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(36, 334);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 13);
@@ -275,6 +277,7 @@ namespace Project_Milestone2_PRG282
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(36, 262);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 13);
@@ -292,6 +295,7 @@ namespace Project_Milestone2_PRG282
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(36, 236);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 13);
@@ -301,6 +305,7 @@ namespace Project_Milestone2_PRG282
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(36, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
@@ -317,6 +322,7 @@ namespace Project_Milestone2_PRG282
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(36, 184);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
@@ -326,6 +332,7 @@ namespace Project_Milestone2_PRG282
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(36, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
@@ -343,6 +350,7 @@ namespace Project_Milestone2_PRG282
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(36, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
@@ -352,6 +360,7 @@ namespace Project_Milestone2_PRG282
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(36, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
@@ -380,6 +389,7 @@ namespace Project_Milestone2_PRG282
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(36, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
@@ -410,7 +420,7 @@ namespace Project_Milestone2_PRG282
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Goldenrod;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(215)))), ((int)(((byte)(198)))));
             this.tabPage2.Controls.Add(this.checkedListBox2);
             this.tabPage2.Controls.Add(this.btnDelete);
             this.tabPage2.Controls.Add(this.btnUpdate);
@@ -614,7 +624,7 @@ namespace Project_Milestone2_PRG282
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Goldenrod;
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(215)))), ((int)(((byte)(198)))));
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.txtMCode_Insert);
@@ -632,69 +642,47 @@ namespace Project_Milestone2_PRG282
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Insert a Module";
             // 
-            // lblDisplayCRUD
+            // button2
             // 
-            this.lblDisplayCRUD.AutoSize = true;
-            this.lblDisplayCRUD.BackColor = System.Drawing.Color.Goldenrod;
-            this.lblDisplayCRUD.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplayCRUD.Location = new System.Drawing.Point(12, 24);
-            this.lblDisplayCRUD.Name = "lblDisplayCRUD";
-            this.lblDisplayCRUD.Size = new System.Drawing.Size(42, 35);
-            this.lblDisplayCRUD.TabIndex = 7;
-            this.lblDisplayCRUD.Text = "...";
+            this.button2.Location = new System.Drawing.Point(83, 165);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 41;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label10
+            // button3
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Goldenrod;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(408, 328);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 35);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Search";
+            this.button3.Location = new System.Drawing.Point(184, 165);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 40;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // txtMCode_Insert
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Goldenrod;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(399, 24);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(116, 35);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Display";
+            this.txtMCode_Insert.Location = new System.Drawing.Point(141, 39);
+            this.txtMCode_Insert.Name = "txtMCode_Insert";
+            this.txtMCode_Insert.Size = new System.Drawing.Size(128, 20);
+            this.txtMCode_Insert.TabIndex = 39;
             // 
-            // txtSearch
+            // label24
             // 
-            this.txtSearch.ForeColor = System.Drawing.Color.Silver;
-            this.txtSearch.Location = new System.Drawing.Point(460, 389);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(125, 20);
-            this.txtSearch.TabIndex = 10;
-            this.txtSearch.Text = "Student Number";
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(105, 120);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(30, 13);
+            this.label24.TabIndex = 38;
+            this.label24.Text = "Link:";
             // 
-            // btnSearch
+            // txtMLink_Inser
             // 
-            this.btnSearch.Location = new System.Drawing.Point(627, 387);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 11;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(814, 496);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 23);
-            this.btnLogout.TabIndex = 12;
-            this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.txtMLink_Inser.Location = new System.Drawing.Point(141, 117);
+            this.txtMLink_Inser.Name = "txtMLink_Inser";
+            this.txtMLink_Inser.Size = new System.Drawing.Size(128, 20);
+            this.txtMLink_Inser.TabIndex = 37;
             // 
             // label21
             // 
@@ -737,51 +725,9 @@ namespace Project_Milestone2_PRG282
             this.txtMName_Insert.Size = new System.Drawing.Size(128, 20);
             this.txtMName_Insert.TabIndex = 32;
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(105, 120);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(30, 13);
-            this.label24.TabIndex = 38;
-            this.label24.Text = "Link:";
-            // 
-            // txtMLink_Inser
-            // 
-            this.txtMLink_Inser.Location = new System.Drawing.Point(141, 117);
-            this.txtMLink_Inser.Name = "txtMLink_Inser";
-            this.txtMLink_Inser.Size = new System.Drawing.Size(128, 20);
-            this.txtMLink_Inser.TabIndex = 37;
-            // 
-            // txtMCode_Insert
-            // 
-            this.txtMCode_Insert.Location = new System.Drawing.Point(141, 39);
-            this.txtMCode_Insert.Name = "txtMCode_Insert";
-            this.txtMCode_Insert.Size = new System.Drawing.Size(128, 20);
-            this.txtMCode_Insert.TabIndex = 39;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(83, 165);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(184, 165);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // tbpUDModule
             // 
-            this.tbpUDModule.BackColor = System.Drawing.Color.Goldenrod;
+            this.tbpUDModule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(215)))), ((int)(((byte)(198)))));
             this.tbpUDModule.Controls.Add(this.button1);
             this.tbpUDModule.Controls.Add(this.button4);
             this.tbpUDModule.Controls.Add(this.txtMCode_UD);
@@ -798,6 +744,24 @@ namespace Project_Milestone2_PRG282
             this.tbpUDModule.Size = new System.Drawing.Size(335, 431);
             this.tbpUDModule.TabIndex = 3;
             this.tbpUDModule.Text = "Update/Delete Module";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(87, 164);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(192, 164);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 50;
+            this.button4.Text = "Update";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // txtMCode_UD
             // 
@@ -863,29 +827,78 @@ namespace Project_Milestone2_PRG282
             this.txtMName_UD.Size = new System.Drawing.Size(128, 20);
             this.txtMName_UD.TabIndex = 42;
             // 
-            // button1
+            // lblDisplayCRUD
             // 
-            this.button1.Location = new System.Drawing.Point(87, 164);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblDisplayCRUD.AutoSize = true;
+            this.lblDisplayCRUD.BackColor = System.Drawing.Color.Transparent;
+            this.lblDisplayCRUD.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayCRUD.ForeColor = System.Drawing.Color.Snow;
+            this.lblDisplayCRUD.Location = new System.Drawing.Point(12, 24);
+            this.lblDisplayCRUD.Name = "lblDisplayCRUD";
+            this.lblDisplayCRUD.Size = new System.Drawing.Size(47, 37);
+            this.lblDisplayCRUD.TabIndex = 7;
+            this.lblDisplayCRUD.Text = "...";
             // 
-            // button4
+            // label10
             // 
-            this.button4.Location = new System.Drawing.Point(192, 164);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 50;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Snow;
+            this.label10.Location = new System.Drawing.Point(408, 328);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(124, 37);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Search";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Snow;
+            this.label11.Location = new System.Drawing.Point(399, 24);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(128, 37);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Display";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.ForeColor = System.Drawing.Color.Silver;
+            this.txtSearch.Location = new System.Drawing.Point(414, 390);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(125, 20);
+            this.txtSearch.TabIndex = 10;
+            this.txtSearch.Text = "Student Number";
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(576, 387);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 11;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(814, 496);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 12;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Project_Milestone2_PRG282.Properties.Resources.Image1;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(901, 528);
             this.ControlBox = false;
