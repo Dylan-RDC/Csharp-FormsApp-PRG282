@@ -9,6 +9,11 @@ namespace Project_Milestone2_PRG282.BusinessLayer
     class Module
     {
         public Module() { }
+
+        public Module(string moduleCode)
+        {
+            ModuleCode = moduleCode;
+        }
         public Module(string moduleCode, string moduleName, string moduleDescription, string links)
         {
             ModuleCode = moduleCode;

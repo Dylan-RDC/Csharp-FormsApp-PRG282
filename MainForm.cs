@@ -245,7 +245,6 @@ namespace Project_Milestone2_PRG282
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            
 
             List<Module> module_list = new List<Module>();
             module_list = dh.ReadModules();
@@ -262,7 +261,16 @@ namespace Project_Milestone2_PRG282
                      
                         index = bs.IndexOf(stud); // searches the for the stud in the source if found will change the index to the index of the stud thus invoking the update information invoked by the DGV itself
                         bs.Position = index;
+                        tabControl1.SelectedIndex = 1;
                         MessageBox.Show("Student Found");
+
+                        module_list = dh.FilterModules(txtSearch.Text);
+
+                        for (int i = 0; i < module_list.Count; i++)
+                        {
+                            checkedListBox2.Items.Add(module_list[i]);
+                        }
+                        checkedListBox2.Items.Add(module_list);
                         //checkedListBox2.Items = stud.
                         //foreach (Module mod in module_list)
                         //{
