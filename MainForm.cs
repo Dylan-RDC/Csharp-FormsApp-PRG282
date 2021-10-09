@@ -207,5 +207,22 @@ namespace Project_Milestone2_PRG282
         {
             Creator.Show();
         }
+
+        private void btnResetStudent_Click(object sender, EventArgs e)
+        {
+            richAddress.Clear();
+            richModuleCodes.Clear();
+            txtPhone.Clear();
+            txtStudName.Clear();
+            cmbGender.SelectedIndex = -1;
+            txtStudSurname.Clear();
+            picStudent.Image = null;
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
