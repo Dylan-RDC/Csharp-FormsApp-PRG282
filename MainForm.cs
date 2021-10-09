@@ -187,6 +187,8 @@ namespace Project_Milestone2_PRG282
                 if (checkedListBox2.GetItemCheckState(x) == CheckState.Checked)
                     Mods.Add(checkedListBox2.Items[x].ToString());
             }
+            StudentModule SM = new StudentModule(int.Parse(edtStudNum.Text),Mods);
+            MessageBox.Show($"Update Modules: {SM.UpdateModules()}" );
             bool success= false;
             foreach (var stud in s)
             {
@@ -213,8 +215,7 @@ namespace Project_Milestone2_PRG282
            
                 
             
-            StudentModule SM = new StudentModule(int.Parse( edtStudNum.Text),Mods);
-            MessageBox.Show($"Update Modules: {SM.UpdateModules()}" );
+            
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
