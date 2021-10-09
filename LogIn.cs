@@ -12,10 +12,10 @@ using Project_Milestone2_PRG282.BusinessLayer;
 
 namespace Project_Milestone2_PRG282
 {
-    public partial class Form1 : Form
+    public partial class LogIn : Form
     {
         public static Form Creator;
-        public Form1()
+        public LogIn()
         {
             InitializeComponent();
         }
