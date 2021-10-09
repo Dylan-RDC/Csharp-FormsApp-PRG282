@@ -17,7 +17,6 @@ namespace Project_Milestone2_PRG282
 {
     public partial class MainForm : Form
     {
-        
         public static Form Creator;
         List<Student> s;
         List<Module> modules = new List<Module>();
@@ -29,7 +28,6 @@ namespace Project_Milestone2_PRG282
         DataHandler dh = new DataHandler();
         private void MainForm_Load(object sender, EventArgs e)
         {
-            dgvDisplay.DefaultCellStyle.SelectionBackColor = Color.FromArgb(125, 197, 196); ;
             DisplayStudents();
             lblDisplayCRUD.Text = "Insert a new student.";
             tabControl1.SelectedIndex = 0;
@@ -125,7 +123,7 @@ namespace Project_Milestone2_PRG282
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LogIn login = new LogIn();
+            Form1 login = new Form1();
             login.Show();
             this.Dispose();
 
@@ -507,11 +505,6 @@ namespace Project_Milestone2_PRG282
             txtMLink_Inser.Clear();
             txtMName_Insert.Clear();
             
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

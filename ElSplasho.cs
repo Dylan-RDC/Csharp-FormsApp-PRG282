@@ -21,8 +21,8 @@ namespace Project_Milestone2_PRG282
         {
             this.Hide();
             tmrSplash.Enabled = false;
-            LogIn.Creator = this;
-            LogIn Baby = new LogIn();
+            Form1.Creator = this;
+            Form1 Baby = new Form1();
             Baby.Show();
         }
 
