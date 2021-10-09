@@ -100,7 +100,9 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
 
         public List<Student> getStudent()
         {
+
             Student student = new Student();
+            List<Student>  students= new List<Student>();
             sqlConnection = new SqlConnection(connectionString);
             if (sqlConnection.State != ConnectionState.Open)
             {
@@ -113,11 +115,13 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 {
                     while (reader.Read())
                     {
-                        stud_List.Add(new Student(reader[0].ToString(),reader[1].ToString(), reader[2].ToString(), reader[4].ToString(), reader[5].ToString() , reader[6].ToString() , Convert.ToDateTime(reader[3]),reader[7].ToString()));
+                   
+                        students.Add(new Student(reader[0].ToString(),reader[1].ToString(), reader[2].ToString(), reader[4].ToString(), reader[5].ToString() , reader[6].ToString() , Convert.ToDateTime(reader[3]),reader[7].ToString()));
                     }
                 }
             }
 
+            stud_List = students;
             return stud_List;
         }
 
@@ -209,7 +213,7 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             }
         }
 
-        public string search(string num)
+        public string Search_Students(string num)
         {
             string Name = null;
             foreach (Student stud in stud_List)

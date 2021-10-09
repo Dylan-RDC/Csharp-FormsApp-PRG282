@@ -61,7 +61,6 @@ namespace Project_Milestone2_PRG282
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -80,19 +79,42 @@ namespace Project_Milestone2_PRG282
             this.edtSurname = new System.Windows.Forms.TextBox();
             this.edtName = new System.Windows.Forms.TextBox();
             this.edtStudNum = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.lblDisplayCRUD = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtMDescr_Inser = new System.Windows.Forms.TextBox();
+            this.txtMName_Insert = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtMLink_Inser = new System.Windows.Forms.TextBox();
+            this.txtMCode_Insert = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.tbpUDModule = new System.Windows.Forms.TabPage();
+            this.txtMCode_UD = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtMLink_UD = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtMDescrp_UD = new System.Windows.Forms.TextBox();
+            this.txtMName_UD = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStudent)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PreviewPic)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.tbpUDModule.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDisplay
@@ -153,6 +175,7 @@ namespace Project_Milestone2_PRG282
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tbpUDModule);
             this.tabControl1.Location = new System.Drawing.Point(12, 62);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -390,7 +413,6 @@ namespace Project_Milestone2_PRG282
             this.tabPage2.BackColor = System.Drawing.Color.Goldenrod;
             this.tabPage2.Controls.Add(this.checkedListBox2);
             this.tabPage2.Controls.Add(this.btnDelete);
-            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label13);
@@ -427,7 +449,7 @@ namespace Project_Milestone2_PRG282
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(124, 404);
+            this.btnDelete.Location = new System.Drawing.Point(84, 402);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 43;
@@ -435,18 +457,9 @@ namespace Project_Milestone2_PRG282
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(29, 404);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(229, 404);
+            this.btnUpdate.Location = new System.Drawing.Point(189, 402);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 41;
@@ -599,6 +612,26 @@ namespace Project_Milestone2_PRG282
             this.edtStudNum.Size = new System.Drawing.Size(128, 20);
             this.edtStudNum.TabIndex = 23;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.Goldenrod;
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.button3);
+            this.tabPage3.Controls.Add(this.txtMCode_Insert);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.txtMLink_Inser);
+            this.tabPage3.Controls.Add(this.label21);
+            this.tabPage3.Controls.Add(this.label22);
+            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.txtMDescr_Inser);
+            this.tabPage3.Controls.Add(this.txtMName_Insert);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(335, 431);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Insert a Module";
+            // 
             // lblDisplayCRUD
             // 
             this.lblDisplayCRUD.AutoSize = true;
@@ -663,15 +696,190 @@ namespace Project_Milestone2_PRG282
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // tabPage3
+            // label21
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Goldenrod;
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(335, 431);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Insert a Module";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(69, 94);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 13);
+            this.label21.TabIndex = 36;
+            this.label21.Text = "Description: ";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(56, 68);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(79, 13);
+            this.label22.TabIndex = 35;
+            this.label22.Text = "Module Name: ";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(62, 42);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(73, 13);
+            this.label23.TabIndex = 34;
+            this.label23.Text = "Module Code:";
+            // 
+            // txtMDescr_Inser
+            // 
+            this.txtMDescr_Inser.Location = new System.Drawing.Point(141, 91);
+            this.txtMDescr_Inser.Name = "txtMDescr_Inser";
+            this.txtMDescr_Inser.Size = new System.Drawing.Size(128, 20);
+            this.txtMDescr_Inser.TabIndex = 33;
+            // 
+            // txtMName_Insert
+            // 
+            this.txtMName_Insert.Location = new System.Drawing.Point(141, 65);
+            this.txtMName_Insert.Name = "txtMName_Insert";
+            this.txtMName_Insert.Size = new System.Drawing.Size(128, 20);
+            this.txtMName_Insert.TabIndex = 32;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(105, 120);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(30, 13);
+            this.label24.TabIndex = 38;
+            this.label24.Text = "Link:";
+            // 
+            // txtMLink_Inser
+            // 
+            this.txtMLink_Inser.Location = new System.Drawing.Point(141, 117);
+            this.txtMLink_Inser.Name = "txtMLink_Inser";
+            this.txtMLink_Inser.Size = new System.Drawing.Size(128, 20);
+            this.txtMLink_Inser.TabIndex = 37;
+            // 
+            // txtMCode_Insert
+            // 
+            this.txtMCode_Insert.Location = new System.Drawing.Point(141, 39);
+            this.txtMCode_Insert.Name = "txtMCode_Insert";
+            this.txtMCode_Insert.Size = new System.Drawing.Size(128, 20);
+            this.txtMCode_Insert.TabIndex = 39;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(83, 165);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 41;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(184, 165);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 40;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // tbpUDModule
+            // 
+            this.tbpUDModule.BackColor = System.Drawing.Color.Goldenrod;
+            this.tbpUDModule.Controls.Add(this.button1);
+            this.tbpUDModule.Controls.Add(this.button4);
+            this.tbpUDModule.Controls.Add(this.txtMCode_UD);
+            this.tbpUDModule.Controls.Add(this.label25);
+            this.tbpUDModule.Controls.Add(this.txtMLink_UD);
+            this.tbpUDModule.Controls.Add(this.label26);
+            this.tbpUDModule.Controls.Add(this.label27);
+            this.tbpUDModule.Controls.Add(this.label28);
+            this.tbpUDModule.Controls.Add(this.txtMDescrp_UD);
+            this.tbpUDModule.Controls.Add(this.txtMName_UD);
+            this.tbpUDModule.Location = new System.Drawing.Point(4, 22);
+            this.tbpUDModule.Name = "tbpUDModule";
+            this.tbpUDModule.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpUDModule.Size = new System.Drawing.Size(335, 431);
+            this.tbpUDModule.TabIndex = 3;
+            this.tbpUDModule.Text = "Update/Delete Module";
+            // 
+            // txtMCode_UD
+            // 
+            this.txtMCode_UD.Location = new System.Drawing.Point(144, 37);
+            this.txtMCode_UD.Name = "txtMCode_UD";
+            this.txtMCode_UD.Size = new System.Drawing.Size(128, 20);
+            this.txtMCode_UD.TabIndex = 49;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(108, 118);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(30, 13);
+            this.label25.TabIndex = 48;
+            this.label25.Text = "Link:";
+            // 
+            // txtMLink_UD
+            // 
+            this.txtMLink_UD.Location = new System.Drawing.Point(144, 115);
+            this.txtMLink_UD.Name = "txtMLink_UD";
+            this.txtMLink_UD.Size = new System.Drawing.Size(128, 20);
+            this.txtMLink_UD.TabIndex = 47;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(72, 92);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(66, 13);
+            this.label26.TabIndex = 46;
+            this.label26.Text = "Description: ";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(59, 66);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(79, 13);
+            this.label27.TabIndex = 45;
+            this.label27.Text = "Module Name: ";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(65, 40);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(73, 13);
+            this.label28.TabIndex = 44;
+            this.label28.Text = "Module Code:";
+            // 
+            // txtMDescrp_UD
+            // 
+            this.txtMDescrp_UD.Location = new System.Drawing.Point(144, 89);
+            this.txtMDescrp_UD.Name = "txtMDescrp_UD";
+            this.txtMDescrp_UD.Size = new System.Drawing.Size(128, 20);
+            this.txtMDescrp_UD.TabIndex = 43;
+            // 
+            // txtMName_UD
+            // 
+            this.txtMName_UD.Location = new System.Drawing.Point(144, 63);
+            this.txtMName_UD.Name = "txtMName_UD";
+            this.txtMName_UD.Size = new System.Drawing.Size(128, 20);
+            this.txtMName_UD.TabIndex = 42;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(87, 164);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(192, 164);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 50;
+            this.button4.Text = "Update";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -680,6 +888,7 @@ namespace Project_Milestone2_PRG282
             this.BackgroundImage = global::Project_Milestone2_PRG282.Properties.Resources.Image1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(901, 528);
+            this.ControlBox = false;
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
@@ -706,6 +915,10 @@ namespace Project_Milestone2_PRG282
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PreviewPic)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tbpUDModule.ResumeLayout(false);
+            this.tbpUDModule.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -747,7 +960,6 @@ namespace Project_Milestone2_PRG282
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -771,5 +983,26 @@ namespace Project_Milestone2_PRG282
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtMCode_Insert;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtMLink_Inser;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtMDescr_Inser;
+        private System.Windows.Forms.TextBox txtMName_Insert;
+        private System.Windows.Forms.TabPage tbpUDModule;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtMCode_UD;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtMLink_UD;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txtMDescrp_UD;
+        private System.Windows.Forms.TextBox txtMName_UD;
     }
 }

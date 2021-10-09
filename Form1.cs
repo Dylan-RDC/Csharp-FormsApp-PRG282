@@ -38,10 +38,10 @@ namespace Project_Milestone2_PRG282
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*SqlConnection MyCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|StudentsDB.mdf;Integrated Security=True");
-            MyCon.Open();
-
-            MyCon.Close();*/
+            txtLogInPassword.Clear();
+            txtLogInUserName.Clear();
+            txtCreatePassword.Clear();
+            txtCreateUsername.Clear();
         }
 
         private void btnSign_in_Click(object sender, EventArgs e)
@@ -110,10 +110,6 @@ namespace Project_Milestone2_PRG282
             {
                 MessageBox.Show(result);
             }
-
-            
-
-
         }
 
         private void btnCheat_Click(object sender, EventArgs e)
@@ -124,7 +120,8 @@ namespace Project_Milestone2_PRG282
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Creator.Show();
+
+            Environment.Exit(0);
         }
     }
 }
