@@ -179,6 +179,12 @@ namespace Project_Milestone2_PRG282
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            List<string> Mods = new List<string>();
+            for (int x = 0; x < checkedListBox2.Items.Count; x++)
+            {
+                if (checkedListBox2.GetItemCheckState(x) == CheckState.Checked)
+                    Mods.Add(checkedListBox2.Items[x].ToString());
+            }
             bool success= false;
             foreach (var stud in s)
             {
@@ -190,13 +196,23 @@ namespace Project_Milestone2_PRG282
                     stud.Phone = edtPhone.Text;
                     stud.Address = redAddress.Text;
                     stud.Gender = cbbGender.Text;
-                    MessageBox.Show(stud.UpdateInDB());
+                    MessageBox.Show($"Student Updated: {stud.UpdateInDB()} ");
                     success = true;
                     DisplayStudents();
                 }   
             }
+            
             if (!success)
+            {
                 MessageBox.Show("Update Failed");
+                return;
+            }
+
+           
+                
+            
+            StudentModule SM = new StudentModule(int.Parse( edtStudNum.Text),Mods);
+            MessageBox.Show($"Update Modules: {SM.UpdateModules()}" );
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
