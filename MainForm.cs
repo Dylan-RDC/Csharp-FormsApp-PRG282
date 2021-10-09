@@ -163,6 +163,7 @@ namespace Project_Milestone2_PRG282
                     edtSurname.Text = dgvDisplay.SelectedRows[0].Cells[2].Value.ToString();
                     edtPhone.Text = dgvDisplay.SelectedRows[0].Cells[3].Value.ToString();
                     redAddress.Text = dgvDisplay.SelectedRows[0].Cells[4].Value.ToString();
+                    dtDate.Text = dgvDisplay.SelectedRows[0].Cells[7].Value.ToString(); // FIXED THE DATE DISPLAY WHEN CLICKED ON THE DATAGRIDVIEW
                     switch (dgvDisplay.SelectedRows[0].Cells[5].Value.ToString())
                     {
                         case "Male": cbbGender.SelectedIndex = 0;
@@ -174,9 +175,10 @@ namespace Project_Milestone2_PRG282
                         default: cbbGender.SelectedIndex = -1;
                             break;
                     }//Problem with getting date
-                   // dtDate.Value = DateTime.ParseExact(dgvDisplay.SelectedRows[0].Cells[4].Value.ToString(),"yy-MM-dd",CultureInfo.InvariantCulture);
+                    //dtDate.Text = DateTime.ParseExact(dgvDisplay.SelectedRows[0].Cells[7].Value.ToString(),"yy-MM-dd",CultureInfo.InvariantCulture).ToString();
+                     //Try it with the format: yyyy-MM-dd
                 }
-                    
+
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -243,7 +245,44 @@ namespace Project_Milestone2_PRG282
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           
+            DataHandler dh = new DataHandler();
+            List<Student> stud_list = new List<Student>();
+            stud_list = dh.getStudent();
+
+            List<Module> module_list = new List<Module>();
+            module_list = dh.ReadModules();
+
+            string value = dh.search(txtSearch.Text);
+            if (value != "1")
+            {
+
+                foreach (Student stud in stud_list)
+                {
+                    if (txtSearch.Text == stud.StudNumber)
+                    {
+                        edtStudNum.Text = stud.StudNumber;
+                        edtName.Text = stud.StudName;
+                        edtSurname.Text = stud.StudSurname;
+                        PreviewPic.ImageLocation = stud.ImagePath;
+                        dtDate.Text = stud.DateOfbirth.ToString();
+                        cmbGender.Text = stud.Gender;
+                        edtPhone.Text = stud.Phone;
+                        redAddress.Text = stud.Address;
+                        //checkedListBox2.Items = stud.
+                        //foreach (Module mod in module_list)
+                        //{
+                        //    if (edtStudNum.Text == mod.)
+                        //    {
+
+                        //    }
+                        //    checkedListBox2.
+                        //}
+
+                        //still figuring the code above out 
+                    }
+                }
+
+            }
         }
 
         public void RefreshForm()
@@ -261,6 +300,24 @@ namespace Project_Milestone2_PRG282
             }
             txtStudentNum.Text = i.ToString();
 
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Student Number")
+            {
+                txtSearch.Clear();
+                txtSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Student Number";
+                txtSearch.ForeColor = Color.Silver;
+            }
         }
     }
 }

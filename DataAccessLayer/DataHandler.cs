@@ -179,5 +179,19 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 throw;
             }
         }
+
+        public string search(string num)
+        {
+            string Name = null;
+            foreach (Student stud in stud_List)
+            {
+                if (stud.StudNumber == num)
+                {
+                    Name = stud.StudName;
+                }
+            }
+
+            return (Name == null) ? "1" : Name;
+        }
     }
 }
