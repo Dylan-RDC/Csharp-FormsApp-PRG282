@@ -27,15 +27,8 @@ namespace Project_Milestone2_PRG282
         DataHandler dh = new DataHandler();
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
-            bs.DataSource =  dh.getStudent();
-            dgvDisplay.DataSource = bs;
-            s = dh.getStudent();
-            int i = 0;
-            foreach (var sin in s)
-                i = Int32.Parse(sin.StudNumber);
-            i++;
-            txtStudentNum.Text = i.ToString();
+
+            RefreshForm();
             lblDisplayCRUD.Text = "Insert a new student.";
             tabControl1.SelectedIndex = 0;
         }
@@ -74,9 +67,10 @@ namespace Project_Milestone2_PRG282
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete *SOMEONE* from the database?", "WARNING", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            if (MessageBox.Show(string.Format("Are you sure you want to delete StudentNo: {0} from the database?",edtStudNum.Text), "WARNING", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
-
+                MessageBox.Show(dh.Delete(int.Parse(edtStudNum.Text)));
+                RefreshForm();
             }
         }
         string filename;
@@ -103,12 +97,11 @@ namespace Project_Milestone2_PRG282
             //if (txtStudName.Text != "" && txtStudSurname.Text != "" && txtPhone.Text != "" && cmbGender.SelectedIndex != -1 && richAddress.Text != "" && richModuleCodes.Text != "") ;
             Student tempStud = new Student(txtStudentNum.Text,txtStudName.Text,txtStudSurname.Text,txtPhone.Text,richAddress.Text,cmbGender.Text,dtDOB.Value,lblFilePath.Text);
             MessageBox.Show(tempStud.insertToDB());
-            s = dh.getStudent();
-            int i = 0;
-            foreach (var sin in s)
-                i = Int32.Parse(sin.StudNumber);
-            i++;
+           
             txtStudentNum.Text = i.ToString();
+
+            RefreshForm();
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -126,6 +119,7 @@ namespace Project_Milestone2_PRG282
                     stud.Gender = cbbGender.Text;
                     MessageBox.Show(stud.UpdateInDB());
                     success = true;
+                    RefreshForm();
                 }   
             }
             if (!success)
@@ -222,6 +216,23 @@ namespace Project_Milestone2_PRG282
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
+        }
+
+        public void RefreshForm()
+        {
+            bs.DataSource = dh.getStudent();
+            dgvDisplay.DataSource = bs;
+            s = dh.getStudent();
+            int i = 0;
+            foreach (var item in s)
+            {
+                if (int.Parse(item.StudNumber)>i)
+                {
+                    i = int.Parse(item.StudNumber);
+                }
+            }
+            txtStudentNum.Text = i.ToString();
 
         }
     }

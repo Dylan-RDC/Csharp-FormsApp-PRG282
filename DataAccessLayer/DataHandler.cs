@@ -73,10 +73,19 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             {
                 sqlConnection.Open();
 
-                string query3 = "DELETE from Students where StudentNo= '" + num + "'";
+               /* string query3 = "DELETE from Students where StudentNo= '" + num + "'";
 
                 SqlCommand command = new SqlCommand(query3, sqlConnection);
-                command.ExecuteNonQuery();
+                command.ExecuteNonQuery();*/
+
+                SqlCommand cmd = new SqlCommand("sp_deletestud",sqlConnection); //changed to use stored procedure which removes all related fields from joining table
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@StudentNo",num);
+                cmd.ExecuteNonQuery();
+
+
+
             }
 
             finally
