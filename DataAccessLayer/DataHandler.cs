@@ -152,7 +152,25 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 return "Failed";
             }
         }
+        public bool UpdateStudentModule(int studID, List<string> moduleID)
+        {
+            try
+            {
+                sqlConnection = new SqlConnection(connectionString);
+                sqlConnection.Open();
+                string SQL = $"DELETE FROM StudentModules WHERE StudentNo = {studID}";
+                using (SqlCommand myCom = new SqlCommand(SQL, sqlConnection))
+                    myCom.ExecuteNonQuery();
+                sqlConnection.Close();
+                return (addStudentModules(studID, moduleID) == "Successful");
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
 
+        }
         public List<Module> FilterModules(string StudNum)
         {
             List<Module> module_codes = new List<Module>();

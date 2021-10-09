@@ -15,13 +15,15 @@ namespace Project_Milestone2_PRG282.BusinessLayer
             this.stud = stud;
             this.mods = mods;
         }
-
+        DataHandler dh = new DataHandler();
         public int stud { get; set; }
         public List<string> mods {get; set;}
-
+        public string UpdateModules()
+        {
+            return dh.UpdateStudentModule(this.stud, this.mods) ? "Success" : "Failed";
+        }
         public void sendInsertToDataHandler()
         {
-            DataHandler dh = new DataHandler();
             dh.addStudentModules(stud, mods);
         }
     }
