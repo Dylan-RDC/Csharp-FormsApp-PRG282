@@ -98,7 +98,7 @@ namespace Project_Milestone2_PRG282
             Student tempStud = new Student(txtStudentNum.Text,txtStudName.Text,txtStudSurname.Text,txtPhone.Text,richAddress.Text,cmbGender.Text,dtDOB.Value,lblFilePath.Text);
             MessageBox.Show(tempStud.insertToDB());
            
-            txtStudentNum.Text = i.ToString();
+            
 
             RefreshForm();
 

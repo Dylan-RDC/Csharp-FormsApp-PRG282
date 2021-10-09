@@ -120,5 +120,33 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
 
             return stud_List;
         }
+
+        public string addStudentModules(int studID,List<string> moduleID)//for adding modules for a student
+        {
+            try
+            {
+                using (sqlConnection = new SqlConnection(connectionString))
+                {
+                    sqlConnection.Open();
+
+
+                    foreach (var item in moduleID)
+                    {
+                        string query = string.Format("INSERT INTO StudentModules(StudentNo,ModuleCode) VALUES({0},'{1}')", studID, item);
+
+                        using (SqlCommand cmd = new SqlCommand(query, sqlConnection))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    return "Successful";
+                }
+            }
+            catch (Exception)
+            {
+
+                return "Failed";
+            }
+        }
     }
 }
