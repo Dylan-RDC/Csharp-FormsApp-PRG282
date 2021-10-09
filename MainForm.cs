@@ -245,29 +245,24 @@ namespace Project_Milestone2_PRG282
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataHandler dh = new DataHandler();
-            List<Student> stud_list = new List<Student>();
-            stud_list = dh.getStudent();
+            
 
             List<Module> module_list = new List<Module>();
             module_list = dh.ReadModules();
+            int index = 0;
 
             string value = dh.search(txtSearch.Text);
             if (value != "1")
             {
 
-                foreach (Student stud in stud_list)
+                foreach (var stud in s)
                 {
                     if (txtSearch.Text == stud.StudNumber)
                     {
-                        edtStudNum.Text = stud.StudNumber;
-                        edtName.Text = stud.StudName;
-                        edtSurname.Text = stud.StudSurname;
-                        PreviewPic.ImageLocation = stud.ImagePath;
-                        dtDate.Text = stud.DateOfbirth.ToString();
-                        cmbGender.Text = stud.Gender;
-                        edtPhone.Text = stud.Phone;
-                        redAddress.Text = stud.Address;
+                     
+                        index = bs.IndexOf(stud); // searches the for the stud in the source if found will change the index to the index of the stud thus invoking the update information invoked by the DGV itself
+                        bs.Position = index;
+                        MessageBox.Show("Student Found");
                         //checkedListBox2.Items = stud.
                         //foreach (Module mod in module_list)
                         //{
@@ -283,13 +278,17 @@ namespace Project_Milestone2_PRG282
                 }
 
             }
+            else
+            {
+                MessageBox.Show("Student does not exist");
+            }
         }
 
         public void RefreshForm()
         {
-            bs.DataSource = dh.getStudent();
-            dgvDisplay.DataSource = bs;
             s = dh.getStudent();
+            bs.DataSource = s;
+            dgvDisplay.DataSource = bs;
             int i = 0;
             foreach (var item in s)
             {
