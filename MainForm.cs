@@ -27,10 +27,37 @@ namespace Project_Milestone2_PRG282
         DataHandler dh = new DataHandler();
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             RefreshForm();
             lblDisplayCRUD.Text = "Insert a new student.";
             tabControl1.SelectedIndex = 0;
+
+            List<Module> l = new List<Module>();
+            l = dh.ReadModules();
+
+            foreach (var item in l)//displays all modules insede the second checklistbox//
+            {
+                checkedListBox2.Items.Add(item.ModuleCode);
+            }
+
+            List<Module> newModuleList = new List<Module>();
+            newModuleList = dh.FilterModules(edtStudNum.Text);
+
+            for (int j = 0; j < checkedListBox2.Items.Count; j++)
+            {
+                checkedListBox2.SetItemChecked(j, false);
+            }
+
+            foreach (Module item in newModuleList)
+            {
+                for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                {
+                    if (item.ModuleCode.ToString() == checkedListBox2.Items[i].ToString())
+                    {
+                        checkedListBox2.SetItemChecked(i, true);
+                    }
+                }
+            }
+
         }
 
         private void tabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -155,6 +182,12 @@ namespace Project_Milestone2_PRG282
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            
+            List<Module> module_list = new List<Module>();
+            module_list = dh.ReadModules();
+
+
+
             if (dgvDisplay.SelectedRows != null)
                 if (dgvDisplay.SelectedRows.Count > 0)
                 {
@@ -164,6 +197,7 @@ namespace Project_Milestone2_PRG282
                     edtPhone.Text = dgvDisplay.SelectedRows[0].Cells[3].Value.ToString();
                     redAddress.Text = dgvDisplay.SelectedRows[0].Cells[4].Value.ToString();
                     dtDate.Text = dgvDisplay.SelectedRows[0].Cells[7].Value.ToString(); // FIXED THE DATE DISPLAY WHEN CLICKED ON THE DATAGRIDVIEW
+
                     switch (dgvDisplay.SelectedRows[0].Cells[5].Value.ToString())
                     {
                         case "Male": cbbGender.SelectedIndex = 0;
@@ -175,8 +209,29 @@ namespace Project_Milestone2_PRG282
                         default: cbbGender.SelectedIndex = -1;
                             break;
                     }//Problem with getting date
-                    //dtDate.Text = DateTime.ParseExact(dgvDisplay.SelectedRows[0].Cells[7].Value.ToString(),"yy-MM-dd",CultureInfo.InvariantCulture).ToString();
+                     //dtDate.Text = DateTime.ParseExact(dgvDisplay.SelectedRows[0].Cells[7].Value.ToString(),"yy-MM-dd",CultureInfo.InvariantCulture).ToString();
                      //Try it with the format: yyyy-MM-dd
+
+                    // insert the data from DGV to check list box
+                    List<Module> newModuleList = new List<Module>();
+                    newModuleList = dh.FilterModules(edtStudNum.Text);
+
+                    for (int j = 0; j < checkedListBox2.Items.Count; j++)
+                    {
+                        checkedListBox2.SetItemChecked(j, false);
+                    }
+
+                    foreach (Module item in newModuleList)
+                    {
+                        for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                        {
+                            if (item.ModuleCode.ToString() == checkedListBox2.Items[i].ToString())
+                            {
+                                checkedListBox2.SetItemChecked(i, true);
+                            }
+                        }
+                    }
+
                 }
 
         }
@@ -245,7 +300,7 @@ namespace Project_Milestone2_PRG282
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            checkedListBox2.Items.Clear();
             List<Module> module_list = new List<Module>();
             module_list = dh.ReadModules();
             int index = 0;
@@ -262,32 +317,67 @@ namespace Project_Milestone2_PRG282
                         index = bs.IndexOf(stud); // searches the for the stud in the source if found will change the index to the index of the stud thus invoking the update information invoked by the DGV itself
                         bs.Position = index;
                         tabControl1.SelectedIndex = 1;
-                        MessageBox.Show("Student Found");
+                        
 
-                        module_list = dh.FilterModules(txtSearch.Text);
-
-                        for (int i = 0; i < module_list.Count; i++)
+                        checkedListBox1.Items.Clear();
+                        foreach (var item in module_list)//displays all modules for 2nd checklistbox//
                         {
-                            checkedListBox2.Items.Add(module_list[i]);
+                            checkedListBox2.Items.Add(item.ModuleCode);
                         }
-                        checkedListBox2.Items.Add(module_list);
-                        //checkedListBox2.Items = stud.
-                        //foreach (Module mod in module_list)
-                        //{
-                        //    if (edtStudNum.Text == mod.)
-                        //    {
+                        List<Module> newModuleList = new List<Module>();
+                        newModuleList = dh.FilterModules(txtSearch.Text);
 
-                        //    }
-                        //    checkedListBox2.
-                        //}
+                        for (int i = 0; i < checkedListBox1.Items.Count; i++)
 
-                        //still figuring the code above out 
+                        {
+                            if (checkedListBox1.Items[i].ToString() == txtSearch.Text)
+                            {
+                                checkedListBox1.SetItemChecked(i, true);//Dynamically checking the items
+                            }
+                        }
+
+                        foreach (Module item in newModuleList)
+                        {
+                            for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                            {
+                                if (item.ModuleCode.ToString() == checkedListBox2.Items[i].ToString())
+                                {
+                                    checkedListBox2.SetItemChecked(i, true);
+                                }
+                            }
+                        }
+
+                        MessageBox.Show("Student Found");
                     }
                 }
 
             }
             else
             {
+                foreach (var item in module_list)//displays all modules for 2nd checklistbox//
+                {
+                    checkedListBox2.Items.Add(item.ModuleCode);
+                }
+
+
+                List<Module> newModuleList = new List<Module>();
+                newModuleList = dh.FilterModules(edtStudNum.Text);
+
+                for (int j = 0; j < checkedListBox2.Items.Count; j++)
+                {
+                    checkedListBox2.SetItemChecked(j, false);
+                }
+
+                foreach (Module item in newModuleList)
+                {
+                    for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                    {
+                        if (item.ModuleCode.ToString() == checkedListBox2.Items[i].ToString())
+                        {
+                            checkedListBox2.SetItemChecked(i, true);
+                        }
+                    }
+                }
                 MessageBox.Show("Student does not exist");
             }
         }

@@ -155,26 +155,23 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             using (sqlConnection = new SqlConnection(connectionString))
             {
                 sqlConnection.Open();
-                /*  Select m.ModuleCode
-                    FROM Modules as m
-                    JOIN StudentModules as s on m.ModuleCode = s.ModuleCode
-                    Join Students as stud on stud.StudentNo = s.StudentNo
-                    WHERE stud.StudentNo = StudNum
-                    OR continent.ContinentName = 'Asia';;*/
+
                 string queryFilter = "SELECT m.ModuleCode FROM Modules as m " +
-                                "JOIN StudentModules as s on m.ModuleCode = s.ModuleCode" +
+                                "JOIN StudentModules as s on m.ModuleCode = s.ModuleCode " +
                                 "JOIN Students as stud on stud.StudentNo = s.StudentNo " +
                                 "WHERE stud.StudentNo = " + "'" +StudNum +"'";
 
                 SqlCommand cmd = new SqlCommand(queryFilter, sqlConnection);
 
-                //using (var reader = cmd.ExecuteReader())
-                //{
-                //    while (reader.Read())
-                //    {
-                //        module_codes.Add(new Module(reader["ModuleCode"].ToString()));
-                //    }
-                //}
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        module_codes.Add(new Module(reader[0].ToString()));
+                        //module_codes.Add(new Module(reader["ModuleCode"].ToString(), reader["ModuleName"].ToString(), reader["ModuleDescription"].ToString(), reader["Links"].ToString()));
+                    }
+                }
 
             }
             return module_codes;
