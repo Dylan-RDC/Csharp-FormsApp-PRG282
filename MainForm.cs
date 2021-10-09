@@ -151,8 +151,16 @@ namespace Project_Milestone2_PRG282
             //if (txtStudName.Text != "" && txtStudSurname.Text != "" && txtPhone.Text != "" && cmbGender.SelectedIndex != -1 && richAddress.Text != "" && richModuleCodes.Text != "") ;
             Student tempStud = new Student(txtStudentNum.Text,txtStudName.Text,txtStudSurname.Text,txtPhone.Text,richAddress.Text,cmbGender.Text,dtDOB.Value,lblFilePath.Text);
             MessageBox.Show(tempStud.insertToDB());
-           
-            
+            List<string> Mods = new List<string>();
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                if (checkedListBox1.GetItemChecked(i))
+                {
+                    Mods.Add(checkedListBox1.Items[i].ToString());
+                }
+            }
+            StudentModule studMod = new StudentModule(int.Parse(tempStud.StudNumber), Mods);
+            studMod.sendInsertToDataHandler();
 
             RefreshForm();
 
@@ -395,6 +403,7 @@ namespace Project_Milestone2_PRG282
                     i = int.Parse(item.StudNumber);
                 }
             }
+            i++;
             txtStudentNum.Text = i.ToString();
 
         }

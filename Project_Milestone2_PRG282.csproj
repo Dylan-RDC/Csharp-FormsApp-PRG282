@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\StudentModule.cs" />
     <Compile Include="BusinessLayer\FileMethods.cs" />
     <Compile Include="BusinessLayer\Module.cs" />
     <Compile Include="BusinessLayer\Student.cs" />
