@@ -63,7 +63,7 @@
             // 
             // SignIn_Tab
             // 
-            this.SignIn_Tab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.SignIn_Tab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.SignIn_Tab.Controls.Add(this.btnCheat);
             this.SignIn_Tab.Controls.Add(this.btnSign_in);
             this.SignIn_Tab.Controls.Add(this.label5);
@@ -164,7 +164,7 @@
             // 
             // SignUp_Tab
             // 
-            this.SignUp_Tab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.SignUp_Tab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.SignUp_Tab.Controls.Add(this.btnSignUp);
             this.SignUp_Tab.Controls.Add(this.label6);
             this.SignUp_Tab.Controls.Add(this.label3);

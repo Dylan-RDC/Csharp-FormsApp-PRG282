@@ -172,10 +172,11 @@ namespace Project_Milestone2_PRG282
             // 
             // btnLast
             // 
-            this.btnLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.btnLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.btnLast.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnLast.FlatAppearance.BorderSize = 0;
             this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLast.Location = new System.Drawing.Point(561, 0);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(188, 46);
@@ -186,10 +187,11 @@ namespace Project_Milestone2_PRG282
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.btnNext.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.Location = new System.Drawing.Point(377, 0);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(184, 46);
@@ -200,10 +202,11 @@ namespace Project_Milestone2_PRG282
             // 
             // btnPrevious
             // 
-            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPrevious.FlatAppearance.BorderSize = 0;
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.Location = new System.Drawing.Point(193, 0);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(184, 46);
@@ -214,10 +217,11 @@ namespace Project_Milestone2_PRG282
             // 
             // btnFirst
             // 
-            this.btnFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.btnFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.btnFirst.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnFirst.FlatAppearance.BorderSize = 0;
             this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirst.Location = new System.Drawing.Point(0, 0);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(193, 46);
@@ -269,6 +273,7 @@ namespace Project_Milestone2_PRG282
             // 
             // panel7
             // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.panel7.Controls.Add(this.txtSearch);
             this.panel7.Controls.Add(this.label10);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
@@ -303,6 +308,7 @@ namespace Project_Milestone2_PRG282
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.panel6.Controls.Add(this.label11);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
@@ -324,7 +330,7 @@ namespace Project_Milestone2_PRG282
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -340,6 +346,7 @@ namespace Project_Milestone2_PRG282
             // 
             // panelInfo
             // 
+            this.panelInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.panelInfo.Controls.Add(this.label29);
             this.panelInfo.Controls.Add(this.tabControl1);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Left;
@@ -958,6 +965,7 @@ namespace Project_Milestone2_PRG282
             this.button1.TabIndex = 51;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button4
             // 
@@ -1056,7 +1064,7 @@ namespace Project_Milestone2_PRG282
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelNav.Location = new System.Drawing.Point(0, 0);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(346, 715);
+            this.panelNav.Size = new System.Drawing.Size(346, 702);
             this.panelNav.TabIndex = 15;
             // 
             // btnEditModule
@@ -1067,7 +1075,7 @@ namespace Project_Milestone2_PRG282
             this.btnEditModule.FlatAppearance.BorderSize = 0;
             this.btnEditModule.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(46)))), ((int)(((byte)(88)))));
             this.btnEditModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditModule.ForeColor = System.Drawing.Color.Snow;
             this.btnEditModule.Location = new System.Drawing.Point(0, 430);
             this.btnEditModule.Name = "btnEditModule";
@@ -1085,7 +1093,7 @@ namespace Project_Milestone2_PRG282
             this.btnInsertModule.FlatAppearance.BorderSize = 0;
             this.btnInsertModule.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(46)))), ((int)(((byte)(88)))));
             this.btnInsertModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsertModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertModule.ForeColor = System.Drawing.Color.Snow;
             this.btnInsertModule.Location = new System.Drawing.Point(0, 320);
             this.btnInsertModule.Name = "btnInsertModule";
@@ -1103,7 +1111,7 @@ namespace Project_Milestone2_PRG282
             this.btnEditStudent.FlatAppearance.BorderSize = 0;
             this.btnEditStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(46)))), ((int)(((byte)(88)))));
             this.btnEditStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditStudent.ForeColor = System.Drawing.Color.Snow;
             this.btnEditStudent.Location = new System.Drawing.Point(0, 210);
             this.btnEditStudent.Name = "btnEditStudent";
@@ -1121,7 +1129,7 @@ namespace Project_Milestone2_PRG282
             this.btnInsertStudent.FlatAppearance.BorderSize = 0;
             this.btnInsertStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(46)))), ((int)(((byte)(88)))));
             this.btnInsertStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsertStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertStudent.ForeColor = System.Drawing.Color.Snow;
             this.btnInsertStudent.Location = new System.Drawing.Point(0, 100);
             this.btnInsertStudent.Name = "btnInsertStudent";
@@ -1133,7 +1141,7 @@ namespace Project_Milestone2_PRG282
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(145)))), ((int)(((byte)(143)))));
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(160)))), ((int)(((byte)(143)))));
             this.panelLogo.BackgroundImage = global::Project_Milestone2_PRG282.Properties.Resources.bcLogoFinal;
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1150,7 +1158,7 @@ namespace Project_Milestone2_PRG282
             this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(46)))), ((int)(((byte)(88)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.Snow;
-            this.btnLogout.Location = new System.Drawing.Point(0, 643);
+            this.btnLogout.Location = new System.Drawing.Point(0, 630);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(346, 72);
             this.btnLogout.TabIndex = 12;
@@ -1161,13 +1169,14 @@ namespace Project_Milestone2_PRG282
             // 
             // panelMain
             // 
+            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.panelMain.Controls.Add(this.panelHeader);
             this.panelMain.Controls.Add(this.panelContent);
             this.panelMain.Controls.Add(this.panelNav);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1468, 715);
+            this.panelMain.Size = new System.Drawing.Size(1443, 702);
             this.panelMain.TabIndex = 15;
             // 
             // panelContent
@@ -1186,7 +1195,7 @@ namespace Project_Milestone2_PRG282
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(346, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1122, 100);
+            this.panelHeader.Size = new System.Drawing.Size(1097, 100);
             this.panelHeader.TabIndex = 15;
             // 
             // label29
@@ -1207,7 +1216,7 @@ namespace Project_Milestone2_PRG282
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1468, 715);
+            this.ClientSize = new System.Drawing.Size(1443, 702);
             this.ControlBox = false;
             this.Controls.Add(this.panelMain);
             this.MinimumSize = new System.Drawing.Size(1439, 668);
