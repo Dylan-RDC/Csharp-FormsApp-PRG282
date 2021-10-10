@@ -80,7 +80,8 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
 
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ModuleCode", ModuleCode);
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
+                MessageBox.Show(cmd.ExecuteNonQuery().ToString());
             }
 
             finally
@@ -195,36 +196,6 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             }
 
         }
-
-        public string addNewModules(string ModCode, string ModName , string ModDescription , string ModLink)//for adding modules for a student
-        {
-            //if (ModCode.Any(Char.IsWhiteSpace))
-            //{
-
-            //}
-            
-
-
-            try
-            {
-                using (sqlConnection = new SqlConnection(connectionString))
-                {
-                    sqlConnection.Open();
-
-                    string queryInsertModule = "INSERT INTO Modules(ModuleCode, ModuleName , ModuleDescription , Links) " +
-                        "VALUES(" + "'" + ModCode + "' , '" + ModName + "' , '" + ModDescription + "' , '" + ModLink + "')";
-                    SqlCommand cmd = new SqlCommand(queryInsertModule, sqlConnection);
-
-                    cmd.ExecuteNonQuery();
-                    return "Successfully added new module!";
-                }
-            }
-            catch (Exception)
-            {
-                return "Failed to insert new module!";
-            }
-        }
-
         public List<Module> FilterModules(string StudNum)
         {
             List<Module> module_codes = new List<Module>();

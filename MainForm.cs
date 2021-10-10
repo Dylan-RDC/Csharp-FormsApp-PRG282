@@ -620,43 +620,13 @@ namespace Project_Milestone2_PRG282
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            
-        }
-
-        private void btnAddModule_Click(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    if (txtMCode_Insert.Text == "" || txtMName_Insert.Text == "" || txtMDescr_Inser.Text == "")
-            //    {
-            //        throw new Exception("Please ensure both password and username are entered");
-            //    }
-            //    if (txtMCode_Insert.Text.Any(Char.IsWhiteSpace))
-            //    {
-            //        throw new Exception("There cannot be any spaces");
-            //    }
-            //    if (txtMCode_Insert.Text.Any(Char.IsPunctuation))
-            //    {
-            //        throw new Exception("Module code can only contain numbers and letters!");
-            //    }
-            //}
-            //catch (Exception exep)
-            //{
-            //    return exep.Message;
-            //}
-
-            MessageBox.Show(dh.addNewModules(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text));
-            DisplayModules();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
             if (MessageBox.Show(string.Format("Are you sure you want to delete Module: {0} from the database?", txtMCode_UD.Text), "WARNING", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
+                MessageBox.Show(txtMCode_UD.Text);
                 MessageBox.Show(dh.DeleteModule(txtMCode_UD.Text));
                 DisplayModules();
             }
+            
         }
     }
 }
