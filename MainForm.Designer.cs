@@ -45,6 +45,7 @@ namespace Project_Milestone2_PRG282
             this.label11 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -123,9 +124,8 @@ namespace Project_Milestone2_PRG282
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.panelData.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -143,8 +143,8 @@ namespace Project_Milestone2_PRG282
             this.tbpUDModule.SuspendLayout();
             this.panelNav.SuspendLayout();
             this.panelMain.SuspendLayout();
-            this.panelContent.SuspendLayout();
             this.panelHeader.SuspendLayout();
+            this.panelContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelData
@@ -348,6 +348,18 @@ namespace Project_Milestone2_PRG282
             this.panelInfo.Size = new System.Drawing.Size(343, 687);
             this.panelInfo.TabIndex = 14;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Snow;
+            this.label29.Location = new System.Drawing.Point(26, 8);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(288, 46);
+            this.label29.TabIndex = 8;
+            this.label29.Text = "Student Data: ";
+            // 
             // tabControl1
             // 
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
@@ -355,7 +367,7 @@ namespace Project_Milestone2_PRG282
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tbpUDModule);
-            this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabControl1.ItemSize = new System.Drawing.Size(10, 10);
             this.tabControl1.Location = new System.Drawing.Point(30, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -625,10 +637,10 @@ namespace Project_Milestone2_PRG282
             this.tabPage2.Controls.Add(this.edtName);
             this.tabPage2.Controls.Add(this.edtStudNum);
             this.tabPage2.Controls.Add(this.PreviewPic);
-            this.tabPage2.Location = new System.Drawing.Point(4, 14);
+            this.tabPage2.Location = new System.Drawing.Point(4, 5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(264, 466);
+            this.tabPage2.Size = new System.Drawing.Size(264, 475);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update/Delete Student";
             // 
@@ -865,6 +877,7 @@ namespace Project_Milestone2_PRG282
             this.button3.TabIndex = 40;
             this.button3.Text = "Add";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtMCode_Insert
             // 
@@ -943,10 +956,10 @@ namespace Project_Milestone2_PRG282
             this.tbpUDModule.Controls.Add(this.label28);
             this.tbpUDModule.Controls.Add(this.txtMDescrp_UD);
             this.tbpUDModule.Controls.Add(this.txtMName_UD);
-            this.tbpUDModule.Location = new System.Drawing.Point(4, 5);
+            this.tbpUDModule.Location = new System.Drawing.Point(4, 14);
             this.tbpUDModule.Name = "tbpUDModule";
             this.tbpUDModule.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpUDModule.Size = new System.Drawing.Size(264, 475);
+            this.tbpUDModule.Size = new System.Drawing.Size(264, 466);
             this.tbpUDModule.TabIndex = 3;
             this.tbpUDModule.Text = "Update/Delete Module";
             // 
@@ -958,6 +971,7 @@ namespace Project_Milestone2_PRG282
             this.button1.TabIndex = 51;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button4
             // 
@@ -1170,15 +1184,6 @@ namespace Project_Milestone2_PRG282
             this.panelMain.Size = new System.Drawing.Size(1468, 715);
             this.panelMain.TabIndex = 15;
             // 
-            // panelContent
-            // 
-            this.panelContent.Controls.Add(this.panelData);
-            this.panelContent.Controls.Add(this.panelInfo);
-            this.panelContent.Location = new System.Drawing.Point(346, 99);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1095, 687);
-            this.panelContent.TabIndex = 8;
-            // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(33)))), ((int)(((byte)(64)))));
@@ -1189,17 +1194,14 @@ namespace Project_Milestone2_PRG282
             this.panelHeader.Size = new System.Drawing.Size(1122, 100);
             this.panelHeader.TabIndex = 15;
             // 
-            // label29
+            // panelContent
             // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.Snow;
-            this.label29.Location = new System.Drawing.Point(26, 8);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(288, 46);
-            this.label29.TabIndex = 8;
-            this.label29.Text = "Student Data: ";
+            this.panelContent.Controls.Add(this.panelData);
+            this.panelContent.Controls.Add(this.panelInfo);
+            this.panelContent.Location = new System.Drawing.Point(346, 99);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1095, 687);
+            this.panelContent.TabIndex = 8;
             // 
             // MainForm
             // 
@@ -1239,9 +1241,9 @@ namespace Project_Milestone2_PRG282
             this.tbpUDModule.PerformLayout();
             this.panelNav.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
-            this.panelContent.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            this.panelContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

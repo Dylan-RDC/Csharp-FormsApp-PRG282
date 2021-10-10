@@ -69,6 +69,35 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             }
             return "Update fails";
         }
+        public string addNewModules(string ModCode, string ModName, string ModDescription, string ModLink)//for adding modules for a student
+        {
+            //if (ModCode.Any(Char.IsWhiteSpace))
+            //{
+
+            //}
+
+
+
+            try
+            {
+                using (sqlConnection = new SqlConnection(connectionString))
+                {
+                    sqlConnection.Open();
+
+                    string queryInsertModule = "INSERT INTO Modules(ModuleCode, ModuleName , ModuleDescription , Links) " +
+                        "VALUES(" + "'" + ModCode + "' , '" + ModName + "' , '" + ModDescription + "' , '" + ModLink + "')";
+                    SqlCommand cmd = new SqlCommand(queryInsertModule, sqlConnection);
+
+                    cmd.ExecuteNonQuery();
+                    return "Successfully added new module!";
+                }
+            }
+            catch (Exception)
+            {
+                return "Failed to insert new module!";
+            }
+        }
+
         public string DeleteModule(string ModuleCode) // Delete
         {
             sqlConnection = new SqlConnection(connectionString);
@@ -80,8 +109,7 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
 
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ModuleCode", ModuleCode);
-                //cmd.ExecuteNonQuery();
-                MessageBox.Show(cmd.ExecuteNonQuery().ToString());
+                cmd.ExecuteNonQuery();
             }
 
             finally
@@ -206,7 +234,7 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 string queryFilter = "SELECT m.ModuleCode FROM Modules as m " +
                                 "JOIN StudentModules as s on m.ModuleCode = s.ModuleCode " +
                                 "JOIN Students as stud on stud.StudentNo = s.StudentNo " +
-                                "WHERE stud.StudentNo = " + "'" +StudNum +"'";
+                                "WHERE stud.StudentNo = " + "'" + StudNum +"'";
 
                 SqlCommand cmd = new SqlCommand(queryFilter, sqlConnection);
 
