@@ -12,6 +12,7 @@ using Project_Milestone2_PRG282.DataAccessLayer;
 using Project_Milestone2_PRG282.BusinessLayer;
 using System.IO;
 using System.Globalization;
+using System.Drawing.Imaging;
 
 namespace Project_Milestone2_PRG282
 {
@@ -21,6 +22,7 @@ namespace Project_Milestone2_PRG282
         public static Form Creator;
         List<Student> s;
         List<Module> modules = new List<Module>();
+        Image studpic_Update;
         public MainForm()
         {
             InitializeComponent();
@@ -34,10 +36,9 @@ namespace Project_Milestone2_PRG282
             lblDisplayCRUD.Text = "Insert a new student.";
             tabControl1.SelectedIndex = 0;
 
-            List<Module> l = new List<Module>();
-            l = dh.ReadModules();
+            modules = dh.ReadModules();
 
-            foreach (var item in l)//displays all modules insede the second checklistbox//
+            foreach (var item in modules)//displays all modules insede the second checklistbox//
             {
                 checkedListBox2.Items.Add(item.ModuleCode);
             }
@@ -61,6 +62,17 @@ namespace Project_Milestone2_PRG282
                 }
             }
 
+            UpdateModuleDisplay();
+
+        }
+
+        public void UpdateModuleDisplay()
+        {
+            checkedListBox1.Items.Clear();
+            foreach (var item in modules)//displays all modules//
+            {
+                checkedListBox1.Items.Add(item.ModuleCode);
+            }
         }
 
         private void tabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -71,32 +83,8 @@ namespace Project_Milestone2_PRG282
                     {
                         lblDisplayCRUD.Text = "Insert a new Student.";
                         DisplayStudents();
-                        
-                        List<Module> modules = dh.ReadModules();
-
-
-                        checkedListBox1.Items.Clear();
-                        foreach (var item in modules)//displays all modules//
-                        {
-                            checkedListBox1.Items.Add(item.ModuleCode);
-                        }
-
-                        foreach (string item in checkedListBox1.CheckedItems)//reads all checked items//
-                        {
-                            MessageBox.Show(item);
-                        }
-
-                        for (int i = 0; i < checkedListBox1.Items.Count ; i++)
-                        
-                        {
-                            if (checkedListBox1.Items[i].ToString() == txtSearch.Text)
-                            {
-                                checkedListBox1.SetItemChecked(i, true);//Dynamically checking the items
-                            }
-                        }
-
-
-
+                        modules = dh.ReadModules();
+                        UpdateModuleDisplay();
                         break;
                     }
                 case 1:
@@ -162,7 +150,13 @@ namespace Project_Milestone2_PRG282
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             //if (txtStudName.Text != "" && txtStudSurname.Text != "" && txtPhone.Text != "" && cmbGender.SelectedIndex != -1 && richAddress.Text != "" && richModuleCodes.Text != "") ;
-            Student tempStud = new Student(txtStudentNum.Text,txtStudName.Text,txtStudSurname.Text,txtPhone.Text,richAddress.Text,cmbGender.Text,dtDOB.Value,lblFilePath.Text);
+            byte[] imgbytes;
+
+            ImageConverter imgCon = new ImageConverter();
+            imgbytes =  (byte[])imgCon.ConvertTo(picStudent.Image, typeof(byte[]));
+
+
+            Student tempStud = new Student(txtStudentNum.Text, txtStudName.Text, txtStudSurname.Text, txtPhone.Text, richAddress.Text, cmbGender.Text, dtDOB.Value, imgbytes);
             MessageBox.Show(tempStud.insertToDB());
             List<string> Mods = new List<string>();
             for (int i = 0; i < checkedListBox1.Items.Count; i++)
@@ -175,7 +169,7 @@ namespace Project_Milestone2_PRG282
             StudentModule studMod = new StudentModule(int.Parse(tempStud.StudNumber), Mods);
             studMod.sendInsertToDataHandler();
 
-            DisplayStudents();
+            DisplayStudents(); //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         }
 
@@ -194,15 +188,31 @@ namespace Project_Milestone2_PRG282
             {
                 if (stud.StudNumber == edtStudNum.Text)
                 {
+                    Image img = PreviewPic.Image;
                     stud.StudName = edtName.Text;
                     stud.StudSurname = edtSurname.Text;
                     stud.DateOfbirth = dtDate.Value;
                     stud.Phone = edtPhone.Text;
                     stud.Address = redAddress.Text;
                     stud.Gender = cbbGender.Text;
+
+                    if (studpic_Update != PreviewPic.Image)
+                    {
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            img.Save(ms, ImageFormat.Jpeg);
+                            stud.ImageData = ms.ToArray();
+                            ms.Dispose();
+                        }
+                    }
+                   
+
+
                     MessageBox.Show($"Student Updated: {stud.UpdateInDB()} ");
-                    success = true;
-                    DisplayStudents();
+                        success = true;
+                        DisplayStudents();
+                        lblUpdatePath.Text = "";
+  
                 }   
             }
             
@@ -234,14 +244,28 @@ namespace Project_Milestone2_PRG282
                 {//checks if the display is displaying the correct objects
                     if (dgvDisplay.SelectedRows.Count > 0)
                      {
-                        edtStudNum.Text = dgvDisplay.SelectedRows[0].Cells[0].Value.ToString();
-                        edtName.Text = dgvDisplay.SelectedRows[0].Cells[1].Value.ToString();
-                        edtSurname.Text = dgvDisplay.SelectedRows[0].Cells[2].Value.ToString();
-                        edtPhone.Text = dgvDisplay.SelectedRows[0].Cells[3].Value.ToString();
-                        redAddress.Text = dgvDisplay.SelectedRows[0].Cells[4].Value.ToString();
-                        dtDate.Text = dgvDisplay.SelectedRows[0].Cells[7].Value.ToString(); // FIXED THE DATE DISPLAY WHEN CLICKED ON THE DATAGRIDVIEW
+                        edtStudNum.Text = stud.StudNumber.ToString();
+                        edtName.Text = stud.StudName; ;
+                        edtSurname.Text = stud.StudSurname; ;
+                        edtPhone.Text = stud.Phone; 
+                        redAddress.Text = stud.Address;
+                        dtDate.Value = stud.DateOfbirth; // FIXED THE DATE DISPLAY WHEN CLICKED ON THE DATAGRIDVIEW
 
-                        switch (dgvDisplay.SelectedRows[0].Cells[5].Value.ToString())
+                        
+                        byte[] imagedata = stud.ImageData;
+                        using (MemoryStream ms = new MemoryStream(imagedata))
+                        {
+                
+                            studpic_Update = Image.FromStream(ms);
+                        }
+
+                        PreviewPic.Image = studpic_Update;
+
+
+
+
+
+                        switch (stud.Gender)
                         {
                             case "Male":
                                 cbbGender.SelectedIndex = 0;
@@ -482,6 +506,9 @@ namespace Project_Milestone2_PRG282
             bs.DataSource = null;
             bs.DataSource = s;
             dgvDisplay.DataSource = bs;
+
+           
+
             int i = 0;
             foreach (var item in s)
             {
@@ -538,6 +565,29 @@ namespace Project_Milestone2_PRG282
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvDisplay_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog odf = new OpenFileDialog() { Filter = "Images|*.jpg;*.png;*.jpeg", ValidateNames = true, Multiselect = false })
+
+            {
+                if (odf.ShowDialog() == DialogResult.OK)
+                {
+                    filename = odf.FileName;
+                    lblUpdatePath.Text = filename;
+                    PreviewPic.Image = Image.FromFile(filename);
+
+                    string name = Path.GetFileName(filename);
+                    string[] name1 = name.Split('.');
+                    picStudent.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+            }
         }
     }
 }

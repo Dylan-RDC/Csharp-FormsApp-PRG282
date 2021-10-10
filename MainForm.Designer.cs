@@ -107,6 +107,8 @@ namespace Project_Milestone2_PRG282
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.lblUpdatePath = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -122,6 +124,7 @@ namespace Project_Milestone2_PRG282
             this.dgvDisplay.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(215)))), ((int)(((byte)(198)))));
             this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplay.Location = new System.Drawing.Point(405, 62);
+            this.dgvDisplay.MultiSelect = false;
             this.dgvDisplay.Name = "dgvDisplay";
             this.dgvDisplay.ReadOnly = true;
             this.dgvDisplay.RowHeadersWidth = 51;
@@ -129,6 +132,7 @@ namespace Project_Milestone2_PRG282
             this.dgvDisplay.Size = new System.Drawing.Size(477, 226);
             this.dgvDisplay.TabIndex = 0;
             this.dgvDisplay.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dgvDisplay.DoubleClick += new System.EventHandler(this.dgvDisplay_DoubleClick);
             // 
             // btnFirst
             // 
@@ -421,6 +425,8 @@ namespace Project_Milestone2_PRG282
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(215)))), ((int)(((byte)(198)))));
+            this.tabPage2.Controls.Add(this.lblUpdatePath);
+            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.checkedListBox2);
             this.tabPage2.Controls.Add(this.btnDelete);
             this.tabPage2.Controls.Add(this.btnUpdate);
@@ -551,6 +557,7 @@ namespace Project_Milestone2_PRG282
             this.PreviewPic.Location = new System.Drawing.Point(129, 111);
             this.PreviewPic.Name = "PreviewPic";
             this.PreviewPic.Size = new System.Drawing.Size(64, 61);
+            this.PreviewPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PreviewPic.TabIndex = 31;
             this.PreviewPic.TabStop = false;
             // 
@@ -894,6 +901,25 @@ namespace Project_Milestone2_PRG282
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(199, 153);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(26, 19);
+            this.button5.TabIndex = 45;
+            this.button5.Text = "...";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // lblUpdatePath
+            // 
+            this.lblUpdatePath.AutoSize = true;
+            this.lblUpdatePath.Location = new System.Drawing.Point(225, 122);
+            this.lblUpdatePath.Name = "lblUpdatePath";
+            this.lblUpdatePath.Size = new System.Drawing.Size(0, 13);
+            this.lblUpdatePath.TabIndex = 46;
+            this.lblUpdatePath.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1017,5 +1043,7 @@ namespace Project_Milestone2_PRG282
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtMDescrp_UD;
         private System.Windows.Forms.TextBox txtMName_UD;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label lblUpdatePath;
     }
 }

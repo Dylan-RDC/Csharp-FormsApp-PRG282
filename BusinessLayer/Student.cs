@@ -18,7 +18,7 @@ namespace Project_Milestone2_PRG282.BusinessLayer
         string studNumber, studName, studSurname, phone, address, gender;
         DateTime dateOfbirth;
 
-        public Student(string studNum,string studName, string studSurname, string phone, string address, string gender, DateTime dateOfbirth,string imagePath)
+        public Student(string studNum,string studName, string studSurname, string phone, string address, string gender, DateTime dateOfbirth,byte[] imagePath)
         {
             this.StudNumber = studNum;
             this.StudName = studName;
@@ -27,7 +27,7 @@ namespace Project_Milestone2_PRG282.BusinessLayer
             this.Address = address;
             this.Gender = gender;
             this.DateOfbirth = dateOfbirth;
-            this.ImagePath = imagePath;
+            this.ImageData = imagePath;
         }
 
         public string StudNumber { get => studNumber; set => studNumber = value; }
@@ -36,18 +36,20 @@ namespace Project_Milestone2_PRG282.BusinessLayer
         public string Phone { get => phone; set => phone = value; }
         public string Address { get => address; set => address = value; }
         public string Gender { get => gender; set => gender = value; }
-        public string ImagePath { get; set; }
+        public byte[] ImageData { get; set; }
+
         public DateTime DateOfbirth { get => dateOfbirth; set => dateOfbirth = value; }
 
         public string insertToDB()
         {
             DataHandler dh = new DataHandler();
-            return dh.insertStudent(StudName, StudSurname, DateOfbirth, Phone, Address, Gender, ImagePath);
+            return dh.insertStudent(StudName, StudSurname, DateOfbirth, Phone, Address, Gender, ImageData);
         }
         public string UpdateInDB()
         {
             DataHandler dh = new DataHandler();
-            return dh.UpdateStudent(StudNumber,StudName, StudSurname, DateOfbirth, Phone, Address, Gender);
+
+            return dh.UpdateStudent(StudNumber,StudName, StudSurname, DateOfbirth, Phone, Address, Gender,ImageData);
         }
         public int CompareTo(Student other)
         {

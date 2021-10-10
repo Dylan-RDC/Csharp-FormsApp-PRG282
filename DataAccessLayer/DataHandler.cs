@@ -19,14 +19,15 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
         SqlConnection sqlConnection;
 
         List<Student> stud_List = new List<Student>();
-        public string insertStudent(string FirstName, string LastName, DateTime DOB, string Phone, string Address, string Gender,string StudentImagePath)
+        public string insertStudent(string FirstName, string LastName, DateTime DOB, string Phone, string Address, string Gender,byte[] Image)
         {
             sqlConnection = new SqlConnection(connectionString);
             if (sqlConnection.State != ConnectionState.Open)
                 sqlConnection.Open();
             string query = $"INSERT INTO Students(FirstName,LastName,DOB,Phone,Address,Gender,StudentImage) " +
-            $"SELECT  '{FirstName}','{LastName}','{DOB:yyyy-MM-dd}','{Phone}','{Address}','{Gender}',StudentImage FROM OPENROWSET(BULK N'{StudentImagePath}', SINGLE_BLOB)AS ImageSource(StudentImage)";
+            $"SELECT  '{FirstName}','{LastName}','{DOB:yyyy-MM-dd}','{Phone}','{Address}','{Gender}',@Image";
             SqlCommand cmd = new SqlCommand(query, sqlConnection);
+            cmd.Parameters.AddWithValue("@Image", Image);
             try
             {
                 int rows = cmd.ExecuteNonQuery();
@@ -42,15 +43,17 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             }
             return "Insert failed";
         }
-        public string UpdateStudent(string studNumber,string FirstName, string LastName, DateTime DOB, string Phone, string Address, string Gender)
+        public string UpdateStudent(string studNumber,string FirstName, string LastName, DateTime DOB, string Phone, string Address, string Gender, byte[] image)
         {
             sqlConnection = new SqlConnection(connectionString);
             if (sqlConnection.State != ConnectionState.Open)
                 sqlConnection.Open();
+          
             string query = $"UPDATE Students " +
-            $"SET  FirstName = '{FirstName}',LastName = '{LastName}',DOB = '{DOB:yyyy-MM-dd}',Phone ='{Phone}',Address = '{Address}',Gender = '{Gender}' WHERE StudentNo = {studNumber}";
+            $"SET  FirstName = '{FirstName}',LastName = '{LastName}',DOB = '{DOB:yyyy-MM-dd}',Phone ='{Phone}',Address = '{Address}',Gender = '{Gender}', StudentImage = @Image WHERE StudentNo = {studNumber}";
             Clipboard.SetText(query);
             SqlCommand cmd = new SqlCommand(query, sqlConnection);
+            cmd.Parameters.AddWithValue("@Image",image);
             try
             {
                 int rows = cmd.ExecuteNonQuery();
@@ -59,9 +62,9 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                     return "Success";
                 }
             }
-            catch (Exception)
+            catch (Exception error)
             {
-
+                return error.Message;
                 return "Update failed";
             }
             return "Update fails";
@@ -116,7 +119,7 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                     while (reader.Read())
                     {
                    
-                        students.Add(new Student(reader[0].ToString(),reader[1].ToString(), reader[2].ToString(), reader[4].ToString(), reader[5].ToString() , reader[6].ToString() , Convert.ToDateTime(reader[3]),reader[7].ToString()));
+                        students.Add(new Student(reader[0].ToString(),reader[1].ToString(), reader[2].ToString(), reader[4].ToString(), reader[5].ToString() , reader[6].ToString() , Convert.ToDateTime(reader[3]),(byte[])reader[7]));
                     }
                 }
             }
