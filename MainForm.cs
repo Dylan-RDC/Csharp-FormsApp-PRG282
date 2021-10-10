@@ -630,10 +630,5 @@ namespace Project_Milestone2_PRG282
             }
             
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
