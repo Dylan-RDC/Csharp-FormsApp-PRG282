@@ -69,6 +69,31 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             }
             return "Update fails";
         }
+        public string DeleteModule(string ModuleCode) // Delete
+        {
+            sqlConnection = new SqlConnection(connectionString);
+            try
+            {
+                sqlConnection.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_DeleteModule", sqlConnection); //changed to use stored procedure which removes all related fields from joining table
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ModuleCode", ModuleCode);
+                //cmd.ExecuteNonQuery();
+                MessageBox.Show(cmd.ExecuteNonQuery().ToString());
+            }
+
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+            return "Successfully Deleted";
+        }
+
         public string Delete(int num) // Delete
         {
             sqlConnection = new SqlConnection(connectionString);
@@ -86,9 +111,6 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@StudentNo",num);
                 cmd.ExecuteNonQuery();
-
-
-
             }
 
             finally

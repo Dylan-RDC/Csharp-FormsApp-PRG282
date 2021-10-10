@@ -589,5 +589,16 @@ namespace Project_Milestone2_PRG282
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(string.Format("Are you sure you want to delete Module: {0} from the database?", txtMCode_UD.Text), "WARNING", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            {
+                MessageBox.Show(txtMCode_UD.Text);
+                MessageBox.Show(dh.DeleteModule(txtMCode_UD.Text));
+                DisplayModules();
+            }
+            
+        }
     }
 }

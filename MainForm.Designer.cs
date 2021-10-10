@@ -59,6 +59,8 @@ namespace Project_Milestone2_PRG282
             this.txtStudName = new System.Windows.Forms.TextBox();
             this.txtStudentNum = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblUpdatePath = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -107,8 +109,6 @@ namespace Project_Milestone2_PRG282
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.lblUpdatePath = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -454,6 +454,25 @@ namespace Project_Milestone2_PRG282
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update/Delete Student";
             // 
+            // lblUpdatePath
+            // 
+            this.lblUpdatePath.AutoSize = true;
+            this.lblUpdatePath.Location = new System.Drawing.Point(225, 122);
+            this.lblUpdatePath.Name = "lblUpdatePath";
+            this.lblUpdatePath.Size = new System.Drawing.Size(0, 13);
+            this.lblUpdatePath.TabIndex = 46;
+            this.lblUpdatePath.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(199, 153);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(26, 19);
+            this.button5.TabIndex = 45;
+            this.button5.Text = "...";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // checkedListBox2
             // 
             this.checkedListBox2.FormattingEnabled = true;
@@ -760,6 +779,7 @@ namespace Project_Milestone2_PRG282
             this.button1.TabIndex = 51;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -900,25 +920,6 @@ namespace Project_Milestone2_PRG282
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(199, 153);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(26, 19);
-            this.button5.TabIndex = 45;
-            this.button5.Text = "...";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // lblUpdatePath
-            // 
-            this.lblUpdatePath.AutoSize = true;
-            this.lblUpdatePath.Location = new System.Drawing.Point(225, 122);
-            this.lblUpdatePath.Name = "lblUpdatePath";
-            this.lblUpdatePath.Size = new System.Drawing.Size(0, 13);
-            this.lblUpdatePath.TabIndex = 46;
-            this.lblUpdatePath.Visible = false;
             // 
             // MainForm
             // 
