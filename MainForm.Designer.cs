@@ -94,8 +94,8 @@ namespace Project_Milestone2_PRG282
             this.edtStudNum = new System.Windows.Forms.TextBox();
             this.PreviewPic = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnResetModuleInfo = new System.Windows.Forms.Button();
+            this.btnAddModule = new System.Windows.Forms.Button();
             this.txtMCode_Insert = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.txtMLink_Inser = new System.Windows.Forms.TextBox();
@@ -105,8 +105,8 @@ namespace Project_Milestone2_PRG282
             this.txtMDescr_Inser = new System.Windows.Forms.TextBox();
             this.txtMName_Insert = new System.Windows.Forms.TextBox();
             this.tbpUDModule = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnDeleteModule = new System.Windows.Forms.Button();
+            this.btnUpdateModule = new System.Windows.Forms.Button();
             this.txtMCode_UD = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtMLink_UD = new System.Windows.Forms.TextBox();
@@ -172,7 +172,7 @@ namespace Project_Milestone2_PRG282
             // 
             // btnLast
             // 
-            this.btnLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.btnLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.btnLast.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnLast.FlatAppearance.BorderSize = 0;
             this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -186,7 +186,7 @@ namespace Project_Milestone2_PRG282
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.btnNext.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -200,7 +200,7 @@ namespace Project_Milestone2_PRG282
             // 
             // btnPrevious
             // 
-            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPrevious.FlatAppearance.BorderSize = 0;
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -214,7 +214,7 @@ namespace Project_Milestone2_PRG282
             // 
             // btnFirst
             // 
-            this.btnFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.btnFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.btnFirst.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnFirst.FlatAppearance.BorderSize = 0;
             this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -269,6 +269,7 @@ namespace Project_Milestone2_PRG282
             // 
             // panel7
             // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.panel7.Controls.Add(this.txtSearch);
             this.panel7.Controls.Add(this.label10);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
@@ -324,7 +325,7 @@ namespace Project_Milestone2_PRG282
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(197)))), ((int)(((byte)(196)))));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -340,6 +341,7 @@ namespace Project_Milestone2_PRG282
             // 
             // panelInfo
             // 
+            this.panelInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.panelInfo.Controls.Add(this.label29);
             this.panelInfo.Controls.Add(this.tabControl1);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Left;
@@ -637,10 +639,10 @@ namespace Project_Milestone2_PRG282
             this.tabPage2.Controls.Add(this.edtName);
             this.tabPage2.Controls.Add(this.edtStudNum);
             this.tabPage2.Controls.Add(this.PreviewPic);
-            this.tabPage2.Location = new System.Drawing.Point(4, 5);
+            this.tabPage2.Location = new System.Drawing.Point(4, 14);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(264, 475);
+            this.tabPage2.Size = new System.Drawing.Size(264, 466);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update/Delete Student";
             // 
@@ -842,8 +844,8 @@ namespace Project_Milestone2_PRG282
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(215)))), ((int)(((byte)(198)))));
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.button3);
+            this.tabPage3.Controls.Add(this.btnResetModuleInfo);
+            this.tabPage3.Controls.Add(this.btnAddModule);
             this.tabPage3.Controls.Add(this.txtMCode_Insert);
             this.tabPage3.Controls.Add(this.label24);
             this.tabPage3.Controls.Add(this.txtMLink_Inser);
@@ -859,25 +861,25 @@ namespace Project_Milestone2_PRG282
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Insert a Module";
             // 
-            // button2
+            // btnResetModuleInfo
             // 
-            this.button2.Location = new System.Drawing.Point(42, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnResetModuleInfo.Location = new System.Drawing.Point(42, 149);
+            this.btnResetModuleInfo.Name = "btnResetModuleInfo";
+            this.btnResetModuleInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnResetModuleInfo.TabIndex = 41;
+            this.btnResetModuleInfo.Text = "Reset";
+            this.btnResetModuleInfo.UseVisualStyleBackColor = true;
+            this.btnResetModuleInfo.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnAddModule
             // 
-            this.button3.Location = new System.Drawing.Point(143, 149);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnAddModule.Location = new System.Drawing.Point(143, 149);
+            this.btnAddModule.Name = "btnAddModule";
+            this.btnAddModule.Size = new System.Drawing.Size(75, 23);
+            this.btnAddModule.TabIndex = 40;
+            this.btnAddModule.Text = "Add";
+            this.btnAddModule.UseVisualStyleBackColor = true;
+            this.btnAddModule.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtMCode_Insert
             // 
@@ -946,8 +948,8 @@ namespace Project_Milestone2_PRG282
             // tbpUDModule
             // 
             this.tbpUDModule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(215)))), ((int)(((byte)(198)))));
-            this.tbpUDModule.Controls.Add(this.button1);
-            this.tbpUDModule.Controls.Add(this.button4);
+            this.tbpUDModule.Controls.Add(this.btnDeleteModule);
+            this.tbpUDModule.Controls.Add(this.btnUpdateModule);
             this.tbpUDModule.Controls.Add(this.txtMCode_UD);
             this.tbpUDModule.Controls.Add(this.label25);
             this.tbpUDModule.Controls.Add(this.txtMLink_UD);
@@ -963,24 +965,25 @@ namespace Project_Milestone2_PRG282
             this.tbpUDModule.TabIndex = 3;
             this.tbpUDModule.Text = "Update/Delete Module";
             // 
-            // button1
+            // btnDeleteModule
             // 
-            this.button1.Location = new System.Drawing.Point(44, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnDeleteModule.Location = new System.Drawing.Point(44, 152);
+            this.btnDeleteModule.Name = "btnDeleteModule";
+            this.btnDeleteModule.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteModule.TabIndex = 51;
+            this.btnDeleteModule.Text = "Delete";
+            this.btnDeleteModule.UseVisualStyleBackColor = true;
+            this.btnDeleteModule.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button4
+            // btnUpdateModule
             // 
-            this.button4.Location = new System.Drawing.Point(149, 152);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 50;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnUpdateModule.Location = new System.Drawing.Point(149, 152);
+            this.btnUpdateModule.Name = "btnUpdateModule";
+            this.btnUpdateModule.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateModule.TabIndex = 50;
+            this.btnUpdateModule.Text = "Update";
+            this.btnUpdateModule.UseVisualStyleBackColor = true;
+            this.btnUpdateModule.Click += new System.EventHandler(this.button4_Click);
             // 
             // txtMCode_UD
             // 
@@ -1147,7 +1150,7 @@ namespace Project_Milestone2_PRG282
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(145)))), ((int)(((byte)(143)))));
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(160)))), ((int)(((byte)(143)))));
             this.panelLogo.BackgroundImage = global::Project_Milestone2_PRG282.Properties.Resources.bcLogoFinal;
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1175,6 +1178,7 @@ namespace Project_Milestone2_PRG282
             // 
             // panelMain
             // 
+            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(239)))), ((int)(((byte)(209)))));
             this.panelMain.Controls.Add(this.panelHeader);
             this.panelMain.Controls.Add(this.panelContent);
             this.panelMain.Controls.Add(this.panelNav);
@@ -1312,8 +1316,8 @@ namespace Project_Milestone2_PRG282
         private System.Windows.Forms.TextBox edtStudNum;
         private System.Windows.Forms.PictureBox PreviewPic;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnResetModuleInfo;
+        private System.Windows.Forms.Button btnAddModule;
         private System.Windows.Forms.TextBox txtMCode_Insert;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtMLink_Inser;
@@ -1323,8 +1327,8 @@ namespace Project_Milestone2_PRG282
         private System.Windows.Forms.TextBox txtMDescr_Inser;
         private System.Windows.Forms.TextBox txtMName_Insert;
         private System.Windows.Forms.TabPage tbpUDModule;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDeleteModule;
+        private System.Windows.Forms.Button btnUpdateModule;
         private System.Windows.Forms.TextBox txtMCode_UD;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtMLink_UD;
