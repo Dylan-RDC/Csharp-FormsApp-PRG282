@@ -31,9 +31,9 @@ namespace Project_Milestone2_PRG282
         DataHandler dh = new DataHandler();
         private void MainForm_Load(object sender, EventArgs e)
         {
+           
             dgvDisplay.DefaultCellStyle.SelectionBackColor = Color.FromArgb(125, 197, 196); ;
             DisplayStudents();
-            lblDisplayCRUD.Text = "Insert a new student.";
             tabControl1.SelectedIndex = 0;
 
             modules = dh.ReadModules();
@@ -69,10 +69,14 @@ namespace Project_Milestone2_PRG282
         public void UpdateModuleDisplay()
         {
             checkedListBox1.Items.Clear();
+            checkedListBox2.Items.Clear();
             foreach (var item in modules)//displays all modules//
             {
                 checkedListBox1.Items.Add(item.ModuleCode);
+                checkedListBox2.Items.Add(item.ModuleCode);
             }
+
+            
         }
 
         private void tabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -81,7 +85,8 @@ namespace Project_Milestone2_PRG282
             {
                 case 0:
                     {
-                        lblDisplayCRUD.Text = "Insert a new Student.";
+                        lblDisplayCRUD.Text = "Add a Student:";
+                        txtSearch.Text = "Student Number";
                         DisplayStudents();
                         modules = dh.ReadModules();
                         UpdateModuleDisplay();
@@ -89,19 +94,22 @@ namespace Project_Milestone2_PRG282
                     }
                 case 1:
                     {
-                        lblDisplayCRUD.Text = "Update/Delete Student.";
+                        lblDisplayCRUD.Text = "Edit Students:";
+                        txtSearch.Text = "Student Number";
                         DisplayStudents();
                         break;
                     }
                 case 2:
                     {
-                        lblDisplayCRUD.Text = "Add a new Module.";
+                        lblDisplayCRUD.Text = "Add a Module:";
+                        txtSearch.Text = "Module Code";
                         DisplayModules();
                         break;
                     }
                 case 3:
                     {
-                        lblDisplayCRUD.Text = "Update/Delete Module.";
+                        lblDisplayCRUD.Text = "Edit Modules:";
+                        txtSearch.Text = "Modulce Code";
                         DisplayModules();
                         break;
                     }
@@ -170,6 +178,8 @@ namespace Project_Milestone2_PRG282
             studMod.sendInsertToDataHandler();
 
             DisplayStudents(); //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
         }
 
@@ -325,51 +335,26 @@ namespace Project_Milestone2_PRG282
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            /*dgvDisplay.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            if (dgvDisplay.CurrentCell.RowIndex < dgvDisplay.Rows.Count -2)
-            {
-                dgvDisplay.Rows[dgvDisplay.CurrentCell.RowIndex].Selected = false;
-                dgvDisplay.Rows[dgvDisplay.CurrentCell.RowIndex + 1].Selected = true;
-                bs.MoveNext();
-            }*/
-            bs.MoveNext();
+        
+            bs.MovePrevious();
+         
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            /*dgvDisplay.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            if (dgvDisplay.CurrentCell.RowIndex > 0)
-            {
-                dgvDisplay.Rows[dgvDisplay.CurrentCell.RowIndex -1].Selected = true;
-                dgvDisplay.Rows[dgvDisplay.CurrentCell.RowIndex].Selected = false;
-                bs.MovePrevious();
-            }*/
-            bs.MovePrevious();
+           
+            bs.MoveFirst();
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
-            /*dgvDisplay.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDisplay.Rows[0].Selected = true;
-            dgvDisplay.Rows[dgvDisplay.CurrentCell.RowIndex].Selected = false;
-            bs.MoveFirst();*/
-            bs.MoveFirst();
+
+            bs.MoveLast();
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-           /* dgvDisplay.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //dgvDisplay.Rows[dgvDisplay.Rows.Count-2].Selected = true;
-            //dgvDisplay.Rows[dgvDisplay.CurrentCell.RowIndex].Selected = false;
-            //bs.MoveLast();
-
-            while(dgvDisplay.CurrentCell.RowIndex < dgvDisplay.Rows.Count - 2)
-            {
-                dgvDisplay.Rows[dgvDisplay.CurrentCell.RowIndex].Selected = false;
-                dgvDisplay.Rows[dgvDisplay.CurrentCell.RowIndex + 1].Selected = true;
-                bs.MoveNext();
-            }*/
-            bs.MoveLast();
+            bs.MoveNext();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -396,11 +381,6 @@ namespace Project_Milestone2_PRG282
 
             if ((studtest = bs.Current as Student) != null)
             {
-
-
-                checkedListBox2.Items.Clear();
-                List<Module> module_list = new List<Module>();
-                module_list = dh.ReadModules();
                 int index = 0;
                 string value = dh.Search_Students(txtSearch.Text);
                 if (value != "1")
@@ -413,10 +393,10 @@ namespace Project_Milestone2_PRG282
 
                             index = bs.IndexOf(stud); // searches the for the stud in the source if found will change the index to the index of the stud thus invoking the update information invoked by the DGV itself
                             bs.Position = index;
-                            tabControl1.SelectedIndex = 1;
+                            //tabControl1.SelectedIndex = 1;
 
 
-                            checkedListBox1.Items.Clear();
+                           /* checkedListBox1.Items.Clear();
                             foreach (var item in module_list)//displays all modules for 2nd checklistbox//
                             {
                                 checkedListBox2.Items.Add(item.ModuleCode);
@@ -442,7 +422,7 @@ namespace Project_Milestone2_PRG282
                                         checkedListBox2.SetItemChecked(i, true);
                                     }
                                 }
-                            }
+                            }*/
 
                             MessageBox.Show("Student Found");
                         }
@@ -451,13 +431,7 @@ namespace Project_Milestone2_PRG282
                 }
                 else
                 {
-                    foreach (var item in module_list)//displays all modules for 2nd checklistbox//
-                    {
-                        checkedListBox2.Items.Add(item.ModuleCode);
-                    }
-
-
-                    List<Module> newModuleList = new List<Module>();
+                    /*List<Module> newModuleList = new List<Module>();
                     newModuleList = dh.FilterModules(edtStudNum.Text);
 
                     for (int j = 0; j < checkedListBox2.Items.Count; j++)
@@ -474,7 +448,7 @@ namespace Project_Milestone2_PRG282
                                 checkedListBox2.SetItemChecked(i, true);
                             }
                         }
-                    }
+                    }*/
                     MessageBox.Show("Student does not exist");
                 }//else
             }
@@ -506,6 +480,7 @@ namespace Project_Milestone2_PRG282
             bs.DataSource = null;
             bs.DataSource = s;
             dgvDisplay.DataSource = bs;
+            dgvDisplay.Columns["ImageData"].Visible = false;
 
            
 
@@ -588,6 +563,59 @@ namespace Project_Milestone2_PRG282
                     picStudent.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
+        }
+
+        private void dgvDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnLogout_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnInsertStudent_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+
+            btnEditModule.BackColor = Color.FromArgb(119, 33, 64);
+            btnInsertModule.BackColor = Color.FromArgb(119, 33, 64);
+            btnEditStudent.BackColor = Color.FromArgb(119, 33, 64);
+            btnInsertStudent.BackColor = Color.FromArgb(172, 46, 88);
+
+
+
+        }
+
+        private void btnEditStudent_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+
+            btnEditModule.BackColor = Color.FromArgb(119, 33, 64);
+            btnInsertModule.BackColor = Color.FromArgb(119, 33, 64);
+            btnEditStudent.BackColor = Color.FromArgb(172, 46, 88); 
+            btnInsertStudent.BackColor = Color.FromArgb(119, 33, 64);
+        }
+
+        private void btnInsertModule_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 2;
+
+            btnEditModule.BackColor = Color.FromArgb(119, 33, 64);
+            btnInsertModule.BackColor = Color.FromArgb(172, 46, 88);
+            btnEditStudent.BackColor = Color.FromArgb(119, 33, 64);
+            btnInsertStudent.BackColor = Color.FromArgb(119, 33, 64);
+        }
+
+        private void btnEditModule_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 3;
+
+            btnEditModule.BackColor = Color.FromArgb(172, 46, 88);
+            btnInsertModule.BackColor = Color.FromArgb(119, 33, 64);
+            btnEditStudent.BackColor = Color.FromArgb(119, 33, 64);
+            btnInsertStudent.BackColor = Color.FromArgb(119, 33, 64);
         }
 
         private void button1_Click(object sender, EventArgs e)

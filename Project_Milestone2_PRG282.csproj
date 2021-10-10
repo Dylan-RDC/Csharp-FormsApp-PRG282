@@ -139,6 +139,9 @@
     <None Include="Images\Image2.jpg" />
     <None Include="Images\Image1.jpg" />
     <Content Include="AccountInfo.txt" />
+    <None Include="Images\bcProj.png" />
+    <None Include="Images\bcLogo.png" />
+    <None Include="Images\bcLogoFinal.png" />
     <Content Include="StudentsDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
