@@ -31,7 +31,9 @@ namespace Project_Milestone2_PRG282
         DataHandler dh = new DataHandler();
         private void MainForm_Load(object sender, EventArgs e)
         {
-           
+       
+            
+
             dgvDisplay.DefaultCellStyle.SelectionBackColor = Color.FromArgb(125, 197, 196); ;
             DisplayStudents();
             tabControl1.SelectedIndex = 0;
