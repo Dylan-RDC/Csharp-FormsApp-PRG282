@@ -116,6 +116,7 @@ namespace Project_Milestone2_PRG282
         {
             txtLogInUserName.Text = "Devs";
             txtLogInPassword.Text = "PasswordForDevs@123";
+            btnSign_in.PerformClick();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)

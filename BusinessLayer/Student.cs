@@ -18,6 +18,11 @@ namespace Project_Milestone2_PRG282.BusinessLayer
         string studNumber, studName, studSurname, phone, address, gender;
         DateTime dateOfbirth;
 
+        public Student(string studNum)
+        {
+            this.StudNumber = studNum;
+        }
+
         public Student(string studNum,string studName, string studSurname, string phone, string address, string gender, DateTime dateOfbirth,byte[] imagePath)
         {
             this.StudNumber = studNum;
@@ -51,6 +56,22 @@ namespace Project_Milestone2_PRG282.BusinessLayer
 
             return dh.UpdateStudent(StudNumber,StudName, StudSurname, DateOfbirth, Phone, Address, Gender,ImageData);
         }
+
+        public string DeleteStud()
+        {
+            DataHandler dh = new DataHandler();
+
+            return dh.Delete(int.Parse(this.StudNumber));
+        }
+
+        public List<Module> StudModules()
+        {
+            DataHandler dh = new DataHandler();
+
+            return dh.FilterModules(this.StudNumber);
+        }
+
+
         public int CompareTo(Student other)
         {
             return this.StudName.CompareTo(other.StudName);

@@ -16,6 +16,8 @@ namespace Project_Milestone2_PRG282.BusinessLayer
 
         }
 
+        DataHandler dh = new DataHandler();
+
         public string ValidateLoginInputs(string username,string password)//validate log in attempt info
         {
             try
@@ -129,6 +131,17 @@ namespace Project_Milestone2_PRG282.BusinessLayer
             return fh.Add_User(newUser);
         }
 
+        public List<Student> getStudent()
+        {
+            return dh.getStudent();
+        }
+
+        public List<Module> ReadModules()
+        {
+            return dh.ReadModules();
+        }
+
+        
 
 
     }

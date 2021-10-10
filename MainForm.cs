@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Project_Milestone2_PRG282.DataAccessLayer;
 using Project_Milestone2_PRG282.BusinessLayer;
 using System.IO;
 using System.Globalization;
@@ -28,7 +27,7 @@ namespace Project_Milestone2_PRG282
             InitializeComponent();
         }
         BindingSource bs = new BindingSource();
-        DataHandler dh = new DataHandler();
+        FileMethods fh = new FileMethods();
         private void MainForm_Load(object sender, EventArgs e)
         {
        
@@ -38,7 +37,7 @@ namespace Project_Milestone2_PRG282
             DisplayStudents();
             tabControl1.SelectedIndex = 0;
 
-            modules = dh.ReadModules();
+            modules = fh.ReadModules();
 
             foreach (var item in modules)//displays all modules insede the second checklistbox//
             {
@@ -46,7 +45,10 @@ namespace Project_Milestone2_PRG282
             }
 
             List<Module> newModuleList = new List<Module>();
-            newModuleList = dh.FilterModules(edtStudNum.Text);
+
+            newModuleList = new Student(edtStudNum.Text).StudModules();
+            
+
 
             for (int j = 0; j < checkedListBox2.Items.Count; j++)
             {
@@ -90,7 +92,7 @@ namespace Project_Milestone2_PRG282
                         lblDisplayCRUD.Text = "Add a Student:";
                         txtSearch.Text = "Student Number";
                         DisplayStudents();
-                        modules = dh.ReadModules();
+                        modules = fh.ReadModules();
                         UpdateModuleDisplay();
                         break;
                     }
@@ -134,7 +136,15 @@ namespace Project_Milestone2_PRG282
         {
             if (MessageBox.Show(string.Format("Are you sure you want to delete StudentNo: {0} from the database?",edtStudNum.Text), "WARNING", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
-                MessageBox.Show(dh.Delete(int.Parse(edtStudNum.Text)));
+                foreach (var stud in s)
+                {
+                    if (stud.StudNumber == edtStudNum.Text)
+                    {
+                        MessageBox.Show(stud.DeleteStud());
+                    }
+                }
+
+                   
                 DisplayStudents();
             }
         }
@@ -244,7 +254,7 @@ namespace Project_Milestone2_PRG282
         {
             
             List<Module> module_list = new List<Module>();
-            module_list = dh.ReadModules();
+            module_list = fh.ReadModules();
             Student stud;
             Module mod;
 
@@ -296,7 +306,7 @@ namespace Project_Milestone2_PRG282
                          //Try it with the format: yyyy-MM-dd
 
                         // insert the data from DGV to check list box
-                        List<Module> newModuleList = dh.FilterModules(edtStudNum.Text);
+                        List<Module> newModuleList = new Student(edtStudNum.Text).StudModules() ;
 
 
                         for (int j = 0; j < checkedListBox2.Items.Count; j++)
@@ -344,8 +354,7 @@ namespace Project_Milestone2_PRG282
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-           
-            bs.MoveFirst();
+          bs.MoveFirst();
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
@@ -384,75 +393,28 @@ namespace Project_Milestone2_PRG282
             if ((studtest = bs.Current as Student) != null)
             {
                 int index = 0;
-                string value = dh.Search_Students(txtSearch.Text);
-                if (value != "1")
+                bool found = false;
+
+
+
+                foreach (var stud in s)
                 {
-
-                    foreach (var stud in s)
+                    if (txtSearch.Text == stud.StudNumber)
                     {
-                        if (txtSearch.Text == stud.StudNumber)
-                        {
+                        found = true;
+                        index = bs.IndexOf(stud); // searches the for the stud in the source if found will change the index to the index of the stud thus invoking the update information invoked by the DGV itself
+                        bs.Position = index;
+                        
 
-                            index = bs.IndexOf(stud); // searches the for the stud in the source if found will change the index to the index of the stud thus invoking the update information invoked by the DGV itself
-                            bs.Position = index;
-                            //tabControl1.SelectedIndex = 1;
-
-
-                           /* checkedListBox1.Items.Clear();
-                            foreach (var item in module_list)//displays all modules for 2nd checklistbox//
-                            {
-                                checkedListBox2.Items.Add(item.ModuleCode);
-                            }
-                            List<Module> newModuleList = new List<Module>();
-                            newModuleList = dh.FilterModules(txtSearch.Text);
-
-                            for (int i = 0; i < checkedListBox1.Items.Count; i++)
-
-                            {
-                                if (checkedListBox1.Items[i].ToString() == txtSearch.Text)
-                                {
-                                    checkedListBox1.SetItemChecked(i, true);//Dynamically checking the items
-                                }
-                            }
-
-                            foreach (Module item in newModuleList)
-                            {
-                                for (int i = 0; i < checkedListBox2.Items.Count; i++)
-                                {
-                                    if (item.ModuleCode.ToString() == checkedListBox2.Items[i].ToString())
-                                    {
-                                        checkedListBox2.SetItemChecked(i, true);
-                                    }
-                                }
-                            }*/
-
-                            MessageBox.Show("Student Found");
-                        }
+                        MessageBox.Show("Student Found");
                     }
-
                 }
-                else
+                if (!found)
                 {
-                    /*List<Module> newModuleList = new List<Module>();
-                    newModuleList = dh.FilterModules(edtStudNum.Text);
-
-                    for (int j = 0; j < checkedListBox2.Items.Count; j++)
-                    {
-                        checkedListBox2.SetItemChecked(j, false);
-                    }
-
-                    foreach (Module item in newModuleList)
-                    {
-                        for (int i = 0; i < checkedListBox2.Items.Count; i++)
-                        {
-                            if (item.ModuleCode.ToString() == checkedListBox2.Items[i].ToString())
-                            {
-                                checkedListBox2.SetItemChecked(i, true);
-                            }
-                        }
-                    }*/
                     MessageBox.Show("Student does not exist");
-                }//else
+                }
+               
+      
             }
             if ((mod = bs.Current as Module) != null)
             {
@@ -476,8 +438,8 @@ namespace Project_Milestone2_PRG282
 
         public void DisplayStudents()
         {
-            
-            s = dh.getStudent();
+
+            s = fh.getStudent();
            
             bs.DataSource = null;
             bs.DataSource = s;
@@ -502,7 +464,7 @@ namespace Project_Milestone2_PRG282
 
         public void DisplayModules()
         {
-            modules = dh.ReadModules();
+            modules = fh.ReadModules();
             bs.DataSource = null;
             bs.DataSource = modules;
             dgvDisplay.DataSource = bs;
@@ -647,7 +609,7 @@ namespace Project_Milestone2_PRG282
             //    return exep.Message;
             //}
 
-            MessageBox.Show(dh.addNewModules(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text));
+            MessageBox.Show(new Module(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text).AddToDB());
             DisplayModules();
         }
 
@@ -655,7 +617,7 @@ namespace Project_Milestone2_PRG282
         {
             if (MessageBox.Show(string.Format("Are you sure you want to delete Module: {0} from the database?", txtMCode_UD.Text), "WARNING", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
-                MessageBox.Show(dh.DeleteModule(txtMCode_UD.Text));
+                MessageBox.Show(new Module(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text).DeleteFromDB());
                 DisplayModules();
             }
         }

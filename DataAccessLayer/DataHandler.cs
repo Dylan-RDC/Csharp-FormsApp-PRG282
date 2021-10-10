@@ -71,13 +71,6 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
         }
         public string addNewModules(string ModCode, string ModName, string ModDescription, string ModLink)//for adding modules for a student
         {
-            //if (ModCode.Any(Char.IsWhiteSpace))
-            //{
-
-            //}
-
-
-
             try
             {
                 using (sqlConnection = new SqlConnection(connectionString))

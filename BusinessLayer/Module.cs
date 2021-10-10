@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project_Milestone2_PRG282.DataAccessLayer;
 
 namespace Project_Milestone2_PRG282.BusinessLayer
 {
@@ -31,5 +32,19 @@ namespace Project_Milestone2_PRG282.BusinessLayer
         {
             return $"Module code: {this.ModuleCode}\tModule name: {this.ModuleName}\tDiscription: {this.Description}\tLinks: {this.Links}";
         }
+
+        public string AddToDB()
+        {
+            DataHandler dh = new DataHandler();
+            return dh.addNewModules(this.ModuleCode, this.ModuleName, this.Description, this.Links);
+            
+        }
+
+        public string DeleteFromDB()
+        {
+            DataHandler dh = new DataHandler();
+            return dh.DeleteModule(this.ModuleCode);
+        }
+
     }
 }
