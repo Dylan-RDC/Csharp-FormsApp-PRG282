@@ -194,7 +194,6 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
                     while (reader.Read())
                     {
                         module_codes.Add(new Module(reader[0].ToString()));
-                        //module_codes.Add(new Module(reader["ModuleCode"].ToString(), reader["ModuleName"].ToString(), reader["ModuleDescription"].ToString(), reader["Links"].ToString()));
                     }
                 }
 
