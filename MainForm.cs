@@ -113,7 +113,7 @@ namespace Project_Milestone2_PRG282
                 case 3:
                     {
                         lblDisplayCRUD.Text = "Edit Modules:";
-                        txtSearch.Text = "Modulce Code";
+                        txtSearch.Text = "Module Code";
                         DisplayModules();
                         break;
                     }
@@ -476,7 +476,7 @@ namespace Project_Milestone2_PRG282
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "Student Number")
+            if (txtSearch.Text == "Student Number" || txtSearch.Text == "Module Code")
             {
                 txtSearch.Clear();
                 txtSearch.ForeColor = Color.Black;
