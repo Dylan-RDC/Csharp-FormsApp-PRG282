@@ -141,7 +141,17 @@ namespace Project_Milestone2_PRG282.BusinessLayer
             return dh.ReadModules();
         }
 
-        
+        public bool ValidateStudentInsertInfo(string Name,string Surname,string Phone,string Address, int GenderIndex,DateTime DOB) {
+
+            if (Name.Length > 0 && Name.Length < 31)
+                if (Surname.Length > 0 && Surname.Length < 31)
+                    if (Phone != "" && Phone.All(char.IsDigit) && Phone.Length == 10)
+                        if (Address.Length > 0 && Address.Length < 41)
+                            if (GenderIndex < 3 && GenderIndex > -1)
+                                if (DOB.AddYears(18) <= DateTime.Now)
+                                    return true;
+            return false;
+        }
 
 
     }
