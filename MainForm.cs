@@ -593,35 +593,23 @@ namespace Project_Milestone2_PRG282
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (txtMCode_Insert.Text == "" || txtMName_Insert.Text == "" || txtMDescr_Inser.Text == "")
-            //    {
-            //        throw new Exception("Please ensure both password and username are entered");
-            //    }
-            //    if (txtMCode_Insert.Text.Any(Char.IsWhiteSpace))
-            //    {
-            //        throw new Exception("There cannot be any spaces");
-            //    }
-            //    if (txtMCode_Insert.Text.Any(Char.IsPunctuation))
-            //    {
-            //        throw new Exception("Module code can only contain numbers and letters!");
-            //    }
-            //}
-            //catch (Exception exep)
-            //{
-            //    return exep.Message;
-            //}
-
-            MessageBox.Show(new Module(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text).AddToDB());
-            DisplayModules();
+            if (fh.ValidateModuleInfo(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text))
+            {
+                MessageBox.Show(new Module(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text).AddToDB());
+                DisplayModules();
+            }
+            else
+            {
+                MessageBox.Show("Please check the values inserted!", "Error", MessageBoxButtons.OKCancel);
+            }
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show(string.Format("Are you sure you want to delete Module: {0} from the database?", txtMCode_UD.Text), "WARNING", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
-                MessageBox.Show(new Module(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text).DeleteFromDB());
+                MessageBox.Show(new Module(txtMCode_UD.Text, txtMName_UD.Text, txtMDescrp_UD.Text, txtMLink_UD.Text).DeleteFromDB());
                 DisplayModules();
             }
         }

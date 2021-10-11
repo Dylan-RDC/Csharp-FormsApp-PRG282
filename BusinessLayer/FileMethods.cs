@@ -153,6 +153,35 @@ namespace Project_Milestone2_PRG282.BusinessLayer
             return false;
         }
 
+        public bool ValidateModuleInfo(string mCode, string mName, string mDescription, string mLink)
+        {
+            if (mCode.Any(Char.IsWhiteSpace)|| mLink.Any(Char.IsWhiteSpace))
+            {
+                return false;
+            }
+            if (mCode.Any(Char.IsPunctuation) || mName.Any(Char.IsPunctuation) || mDescription.Any(Char.IsPunctuation))
+            {
+                return false;
+            }
+            if (mLink.Contains("https://")==false)
+            {
+                if (mLink.Contains("www.") == false)
+                {
+                    if (mLink.Contains("http://") == false)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                return true;
+            }
+            return true;
+
+        }
+
 
     }
 }
