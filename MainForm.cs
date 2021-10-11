@@ -605,6 +605,12 @@ namespace Project_Milestone2_PRG282
                 MessageBox.Show(new Module(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text).AddToDB());
                 UpdateModuleDisplay();
                 DisplayModules();
+
+                txtMCode_Insert.Text = "";
+                txtMName_Insert.Text = "";
+                txtMDescr_Inser.Text = "";
+                txtMLink_Inser.Text = "";
+
             }
             else
             {

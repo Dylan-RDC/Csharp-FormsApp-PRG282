@@ -142,6 +142,7 @@
     <None Include="Images\bcProj.png" />
     <None Include="Images\bcLogo.png" />
     <None Include="Images\bcLogoFinal.png" />
+    <Content Include="sqlScriptPRG282_ProjectDB.sql" />
     <Content Include="StudentsDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
