@@ -89,6 +89,7 @@ namespace Project_Milestone2_PRG282
             {
                 case 0:
                     {
+                        txtSearch.ForeColor = Color.Silver;
                         lblDisplayCRUD.Text = "Add a Student:";
                         txtSearch.Text = "Student Number";
                         DisplayStudents();
@@ -98,6 +99,7 @@ namespace Project_Milestone2_PRG282
                     }
                 case 1:
                     {
+                        txtSearch.ForeColor = Color.Silver;
                         lblDisplayCRUD.Text = "Edit Students:";
                         txtSearch.Text = "Student Number";
                         DisplayStudents();
@@ -105,6 +107,7 @@ namespace Project_Milestone2_PRG282
                     }
                 case 2:
                     {
+                        txtSearch.ForeColor = Color.Silver;
                         lblDisplayCRUD.Text = "Add a Module:";
                         txtSearch.Text = "Module Code";
                         DisplayModules();
@@ -112,6 +115,7 @@ namespace Project_Milestone2_PRG282
                     }
                 case 3:
                     {
+                        txtSearch.ForeColor = Color.Silver;
                         lblDisplayCRUD.Text = "Edit Modules:";
                         txtSearch.Text = "Module Code";
                         DisplayModules();
@@ -201,57 +205,61 @@ namespace Project_Milestone2_PRG282
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            List<string> Mods = new List<string>();
-            for (int x = 0; x < checkedListBox2.Items.Count; x++)
+            if (fh.ValidateStudentInsertInfo(edtName.Text, edtSurname.Text, edtPhone.Text, redAddress.Text, cbbGender.SelectedIndex, dtDate.Value))
             {
-                if (checkedListBox2.GetItemCheckState(x) == CheckState.Checked)
-                    Mods.Add(checkedListBox2.Items[x].ToString());
-            }
-            StudentModule SM = new StudentModule(int.Parse(edtStudNum.Text),Mods);
-            MessageBox.Show($"Update Modules: {SM.UpdateModules()}" );
-            bool success= false;
-            foreach (var stud in s)
-            {
-                if (stud.StudNumber == edtStudNum.Text)
+
+                List<string> Mods = new List<string>();
+                for (int x = 0; x < checkedListBox2.Items.Count; x++)
                 {
-                    Image img = PreviewPic.Image;
-                    stud.StudName = edtName.Text;
-                    stud.StudSurname = edtSurname.Text;
-                    stud.DateOfbirth = dtDate.Value;
-                    stud.Phone = edtPhone.Text;
-                    stud.Address = redAddress.Text;
-                    stud.Gender = cbbGender.Text;
-
-                    if (studpic_Update != PreviewPic.Image)
+                    if (checkedListBox2.GetItemCheckState(x) == CheckState.Checked)
+                        Mods.Add(checkedListBox2.Items[x].ToString());
+                }
+                StudentModule SM = new StudentModule(int.Parse(edtStudNum.Text), Mods);
+                //  MessageBox.Show($"Update Modules: {SM.UpdateModules()}" );
+                bool success = false;
+                foreach (var stud in s)
+                {
+                    if (stud.StudNumber == edtStudNum.Text)
                     {
-                        using (MemoryStream ms = new MemoryStream())
+                        Image img = PreviewPic.Image;
+                        stud.StudName = edtName.Text;
+                        stud.StudSurname = edtSurname.Text;
+                        stud.DateOfbirth = dtDate.Value;
+                        stud.Phone = edtPhone.Text;
+                        stud.Address = redAddress.Text;
+                        stud.Gender = cbbGender.Text;
+
+                        if (studpic_Update != PreviewPic.Image)
                         {
-                            img.Save(ms, ImageFormat.Jpeg);
-                            stud.ImageData = ms.ToArray();
-                            ms.Dispose();
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                img.Save(ms, ImageFormat.Jpeg);
+                                stud.ImageData = ms.ToArray();
+                                ms.Dispose();
+                            }
                         }
-                    }
-                   
 
 
-                    MessageBox.Show($"Student Updated: {stud.UpdateInDB()} ");
-                        success = true;
+
+                        MessageBox.Show($"Student Updated: {stud.UpdateInDB()} ");
+                        SM.UpdateModules();
+                            success = true;
                         DisplayStudents();
                         lblUpdatePath.Text = "";
-  
-                }   
-            }
-            
-            if (!success)
-            {
-                MessageBox.Show("Update Failed");
-                return;
-            }
 
-           
-                
-            
-            
+                    }
+                }
+
+                if (!success)
+                {
+                    MessageBox.Show("Update Failed");
+                    return;
+                }
+
+
+
+
+            }
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
