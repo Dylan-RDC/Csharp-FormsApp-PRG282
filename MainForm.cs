@@ -175,7 +175,7 @@ namespace Project_Milestone2_PRG282
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            //if (txtStudName.Text != "" && txtStudSurname.Text != "" && txtPhone.Text != "" && cmbGender.SelectedIndex != -1 && richAddress.Text != "" && richModuleCodes.Text != "") ;
+            
             byte[] imgbytes;
 
             ImageConverter imgCon = new ImageConverter();
@@ -315,11 +315,8 @@ namespace Project_Milestone2_PRG282
                             default:
                                 cbbGender.SelectedIndex = -1;
                                 break;
-                        }//Problem with getting date
-                         //dtDate.Text = DateTime.ParseExact(dgvDisplay.SelectedRows[0].Cells[7].Value.ToString(),"yy-MM-dd",CultureInfo.InvariantCulture).ToString();
-                         //Try it with the format: yyyy-MM-dd
+                        }
 
-                        // insert the data from DGV to check list box
                         List<Module> newModuleList = new Student(edtStudNum.Text).StudModules() ;
 
 
@@ -641,7 +638,6 @@ namespace Project_Milestone2_PRG282
             {
                 MessageBox.Show("Please check the values inserted!", "Error", MessageBoxButtons.OKCancel);
             }
-            
         }
 
         private void txtMCode_UD_Leave(object sender, EventArgs e)

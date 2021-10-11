@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Group 12
+// Dylan Conradie 576864
+// Franco Jacobs 576697
+// Jacobus Schoeman 576855
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -114,6 +118,8 @@ namespace Project_Milestone2_PRG282
 
         private void btnCheat_Click(object sender, EventArgs e)
         {
+            //This button is not part of the final version
+            //It is for ease of use for Lecturers and developers of the project
             txtLogInUserName.Text = "Devs";
             txtLogInPassword.Text = "PasswordForDevs@123";
             btnSign_in.PerformClick();
