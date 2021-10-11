@@ -103,6 +103,7 @@ namespace Project_Milestone2_PRG282
                         txtSearch.ForeColor = Color.Silver;
                         lblDisplayCRUD.Text = "Edit Students:";
                         txtSearch.Text = "Student Number";
+                        UpdateModuleDisplay();
                         DisplayStudents();
                         break;
                     }
@@ -605,6 +606,7 @@ namespace Project_Milestone2_PRG282
             if (fh.ValidateModuleInfo(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text))
             {
                 MessageBox.Show(new Module(txtMCode_Insert.Text, txtMName_Insert.Text, txtMDescr_Inser.Text, txtMLink_Inser.Text).AddToDB());
+                UpdateModuleDisplay();
                 DisplayModules();
             }
             else
@@ -619,6 +621,7 @@ namespace Project_Milestone2_PRG282
             if (MessageBox.Show(string.Format("Are you sure you want to delete Module: {0} from the database?", txtMCode_UD.Text), "WARNING", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
                 MessageBox.Show(new Module(txtMCode_UD.Text, txtMName_UD.Text, txtMDescrp_UD.Text, txtMLink_UD.Text).DeleteFromDB());
+                UpdateModuleDisplay();
                 DisplayModules();
             }
         }
@@ -630,6 +633,7 @@ namespace Project_Milestone2_PRG282
                 if (MessageBox.Show(string.Format("Are you sure you want to update Module: {0} from the database?", module_old), "WARNING", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
                 {
                     MessageBox.Show(fh.UpdateModule(module_old, txtMCode_UD.Text, txtMName_UD.Text, txtMDescrp_UD.Text, txtMLink_UD.Text));
+                    UpdateModuleDisplay();
                     DisplayModules();
                 }
             }
@@ -637,6 +641,7 @@ namespace Project_Milestone2_PRG282
             {
                 MessageBox.Show("Please check the values inserted!", "Error", MessageBoxButtons.OKCancel);
             }
+            
         }
 
         private void txtMCode_UD_Leave(object sender, EventArgs e)
