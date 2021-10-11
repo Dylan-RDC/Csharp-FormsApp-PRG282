@@ -180,28 +180,35 @@ namespace Project_Milestone2_PRG282
 
             ImageConverter imgCon = new ImageConverter();
             imgbytes =  (byte[])imgCon.ConvertTo(picStudent.Image, typeof(byte[]));
-
-            if (fh.ValidateStudentInsertInfo(txtStudName.Text, txtStudSurname.Text, txtPhone.Text, richAddress.Text, cmbGender.SelectedIndex, dtDOB.Value)) { 
-
-                Student tempStud = new Student(txtStudentNum.Text, txtStudName.Text, txtStudSurname.Text, txtPhone.Text, richAddress.Text, cmbGender.Text, dtDOB.Value, imgbytes);
-                MessageBox.Show(tempStud.insertToDB());
-                List<string> Mods = new List<string>();
-                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            if ((picStudent.Image != null))
+            {
+                if (fh.ValidateStudentInsertInfo(txtStudName.Text, txtStudSurname.Text, txtPhone.Text, richAddress.Text, cmbGender.SelectedIndex, dtDOB.Value))
                 {
-                    if (checkedListBox1.GetItemChecked(i))
-                    {
-                        Mods.Add(checkedListBox1.Items[i].ToString());
-                    }
-                }
-                StudentModule studMod = new StudentModule(int.Parse(tempStud.StudNumber), Mods);
-                studMod.sendInsertToDataHandler();
 
-                DisplayStudents(); //---------------------------------------------------------------------------------------------------------------------------------------------------------------
-            }else
+                    Student tempStud = new Student(txtStudentNum.Text, txtStudName.Text, txtStudSurname.Text, txtPhone.Text, richAddress.Text, cmbGender.Text, dtDOB.Value, imgbytes);
+                    MessageBox.Show(tempStud.insertToDB());
+                    List<string> Mods = new List<string>();
+                    for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                    {
+                        if (checkedListBox1.GetItemChecked(i))
+                        {
+                            Mods.Add(checkedListBox1.Items[i].ToString());
+                        }
+                    }
+                    StudentModule studMod = new StudentModule(int.Parse(tempStud.StudNumber), Mods);
+                    studMod.sendInsertToDataHandler();
+
+                    DisplayStudents(); //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+                }
+                else
+                {
+                    MessageBox.Show("Given data cannot be validated");
+                }
+            }
+            else
             {
                 MessageBox.Show("Given data cannot be validated");
             }
-
 
         }
 

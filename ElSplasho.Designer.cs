@@ -39,8 +39,9 @@ namespace Project_Milestone2_PRG282
             // 
             this.pictureBox1.Image = global::Project_Milestone2_PRG282.Properties.Resources.bcLogoFinal;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(601, 389);
+            this.pictureBox1.Size = new System.Drawing.Size(801, 479);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -53,17 +54,19 @@ namespace Project_Milestone2_PRG282
             // 
             // ElSplasho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(600, 600);
+            this.ClientSize = new System.Drawing.Size(800, 738);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ElSplasho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ElSplasho";
             this.TransparencyKey = System.Drawing.Color.Black;
             this.Activated += new System.EventHandler(this.ElSplasho_Activated);
+            this.Load += new System.EventHandler(this.ElSplasho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

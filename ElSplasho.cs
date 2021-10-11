@@ -38,5 +38,10 @@ namespace Project_Milestone2_PRG282
         {
 
         }
+
+        private void ElSplasho_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
