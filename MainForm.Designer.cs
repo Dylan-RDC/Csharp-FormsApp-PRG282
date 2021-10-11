@@ -382,7 +382,7 @@ namespace Project_Milestone2_PRG282
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tbpUDModule);
-            this.tabControl1.ItemSize = new System.Drawing.Size(10, 10);
+            this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
             this.tabControl1.Location = new System.Drawing.Point(40, 82);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -417,11 +417,11 @@ namespace Project_Milestone2_PRG282
             this.tabPage1.Controls.Add(this.txtStudSurname);
             this.tabPage1.Controls.Add(this.txtStudName);
             this.tabPage1.Controls.Add(this.txtStudentNum);
-            this.tabPage1.Location = new System.Drawing.Point(4, 14);
+            this.tabPage1.Location = new System.Drawing.Point(4, 5);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(355, 578);
+            this.tabPage1.Size = new System.Drawing.Size(355, 587);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Insert Student";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
