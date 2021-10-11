@@ -64,7 +64,6 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             }
             catch (Exception error)
             {
-                return error.Message;
                 return "Update failed";
             }
             return "Update fails";
@@ -288,6 +287,64 @@ namespace Project_Milestone2_PRG282.DataAccessLayer
             }
 
             return (Name == null) ? "1" : Name;
+        }
+
+        public string UpdateModule(string oldMCode, string MCode,string Mname,string MDescription,string MLink)
+        {
+            if (oldMCode!=MCode)
+            {
+                using (sqlConnection = new SqlConnection(connectionString))
+                {
+                    sqlConnection.Open();
+                    List<string> studNums = new List<string>();
+                    string deleteStudModsquery = string.Format("DELETE FROM StudentModules WHERE ModuleCode = '{0}'", oldMCode);
+
+                    string QselectFromStudMod = string.Format("SELECT * FROM StudentModules WHERE ModuleCode = '{0}'", oldMCode);
+                    SqlCommand cReadJoining = new SqlCommand(QselectFromStudMod, sqlConnection);
+
+                    using (var reader = cReadJoining.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            studNums.Add(reader["StudentNo"].ToString());
+                        }
+                    }
+
+
+                    SqlCommand cmdDeleteJoining = new SqlCommand(deleteStudModsquery, sqlConnection);
+                    cmdDeleteJoining.ExecuteNonQuery();
+
+
+                    string QUpdateModuleInfo = string.Format("UPDATE Modules SET ModuleCode = '{0}', ModuleName = '{1}', ModuleDescription = '{2}', Links = '{3}' WHERE ModuleCode = '{4}'",MCode,Mname,MDescription,MLink,oldMCode);
+                    SqlCommand cmUpdateModuleInfo = new SqlCommand(QUpdateModuleInfo, sqlConnection);
+                    cmUpdateModuleInfo.ExecuteNonQuery();
+
+                    foreach (var item in studNums)
+                    {
+                        string QUpdateJoining = string.Format("INSERT INTO StudentModules(StudentNo,ModuleCode) VALUES({0},'{1}')",item,MCode);
+                        SqlCommand cmUpdateJoining = new SqlCommand(QUpdateJoining,sqlConnection);
+                        cmUpdateJoining.ExecuteNonQuery();
+                    }
+                }
+                return "Successfully Updated";
+            }
+            else
+            {
+                using (sqlConnection = new SqlConnection(connectionString))
+                {
+                    sqlConnection.Open();
+                    string QUpdateModuleInfo = string.Format("UPDATE Modules SET ModuleName = '{0}', ModuleDescription = '{1}', Links = '{2}' WHERE ModuleCode = '{3}'", Mname, MDescription, MLink, oldMCode);
+                    SqlCommand cmUpdateModuleInfo = new SqlCommand(QUpdateModuleInfo, sqlConnection);
+                    cmUpdateModuleInfo.ExecuteNonQuery();
+                    
+                }
+             return "Successfully Update";
+            }
+
+            
+            
+
+
         }
     }
 }

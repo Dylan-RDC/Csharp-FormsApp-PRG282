@@ -154,7 +154,7 @@ namespace Project_Milestone2_PRG282
             this.panelData.Controls.Add(this.panel2);
             this.panelData.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelData.Location = new System.Drawing.Point(457, 0);
-            this.panelData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelData.Margin = new System.Windows.Forms.Padding(4);
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(1001, 846);
             this.panelData.TabIndex = 13;
@@ -167,7 +167,7 @@ namespace Project_Milestone2_PRG282
             this.panel4.Controls.Add(this.btnFirst);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 678);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1001, 57);
             this.panel4.TabIndex = 14;
@@ -178,7 +178,7 @@ namespace Project_Milestone2_PRG282
             this.btnLast.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnLast.FlatAppearance.BorderSize = 0;
             this.btnLast.Location = new System.Drawing.Point(747, 0);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(4);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(251, 57);
             this.btnLast.TabIndex = 2;
@@ -192,7 +192,7 @@ namespace Project_Milestone2_PRG282
             this.btnNext.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.Location = new System.Drawing.Point(502, 0);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(245, 57);
             this.btnNext.TabIndex = 5;
@@ -206,7 +206,7 @@ namespace Project_Milestone2_PRG282
             this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPrevious.FlatAppearance.BorderSize = 0;
             this.btnPrevious.Location = new System.Drawing.Point(257, 0);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(245, 57);
             this.btnPrevious.TabIndex = 4;
@@ -220,7 +220,7 @@ namespace Project_Milestone2_PRG282
             this.btnFirst.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnFirst.FlatAppearance.BorderSize = 0;
             this.btnFirst.Location = new System.Drawing.Point(0, 0);
-            this.btnFirst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(4);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(257, 57);
             this.btnFirst.TabIndex = 3;
@@ -233,7 +233,7 @@ namespace Project_Milestone2_PRG282
             this.panel3.Controls.Add(this.dgvDisplay);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 82);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1001, 596);
             this.panel3.TabIndex = 13;
@@ -248,7 +248,7 @@ namespace Project_Milestone2_PRG282
             this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplay.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvDisplay.Location = new System.Drawing.Point(0, 0);
-            this.dgvDisplay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDisplay.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDisplay.MultiSelect = false;
             this.dgvDisplay.Name = "dgvDisplay";
             this.dgvDisplay.ReadOnly = true;
@@ -267,7 +267,7 @@ namespace Project_Milestone2_PRG282
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1001, 82);
             this.panel2.TabIndex = 12;
@@ -279,7 +279,7 @@ namespace Project_Milestone2_PRG282
             this.panel7.Controls.Add(this.label10);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(260, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(567, 82);
             this.panel7.TabIndex = 13;
@@ -289,7 +289,7 @@ namespace Project_Milestone2_PRG282
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Silver;
             this.txtSearch.Location = new System.Drawing.Point(375, 28);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(165, 26);
             this.txtSearch.TabIndex = 10;
@@ -315,7 +315,7 @@ namespace Project_Milestone2_PRG282
             this.panel6.Controls.Add(this.label11);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(260, 82);
             this.panel6.TabIndex = 12;
@@ -342,7 +342,7 @@ namespace Project_Milestone2_PRG282
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Snow;
             this.btnSearch.Location = new System.Drawing.Point(824, 0);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(177, 82);
             this.btnSearch.TabIndex = 11;
@@ -357,7 +357,7 @@ namespace Project_Milestone2_PRG282
             this.panelInfo.Controls.Add(this.tabControl1);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelInfo.Location = new System.Drawing.Point(0, 0);
-            this.panelInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelInfo.Margin = new System.Windows.Forms.Padding(4);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(457, 846);
             this.panelInfo.TabIndex = 14;
@@ -384,7 +384,7 @@ namespace Project_Milestone2_PRG282
             this.tabControl1.Controls.Add(this.tbpUDModule);
             this.tabControl1.ItemSize = new System.Drawing.Size(10, 10);
             this.tabControl1.Location = new System.Drawing.Point(40, 82);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(363, 596);
@@ -418,9 +418,9 @@ namespace Project_Milestone2_PRG282
             this.tabPage1.Controls.Add(this.txtStudName);
             this.tabPage1.Controls.Add(this.txtStudentNum);
             this.tabPage1.Location = new System.Drawing.Point(4, 14);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(355, 578);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Insert Student";
@@ -448,7 +448,7 @@ namespace Project_Milestone2_PRG282
             // btnPath
             // 
             this.btnPath.Location = new System.Drawing.Point(231, 169);
-            this.btnPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPath.Margin = new System.Windows.Forms.Padding(4);
             this.btnPath.Name = "btnPath";
             this.btnPath.Size = new System.Drawing.Size(35, 23);
             this.btnPath.TabIndex = 25;
@@ -459,7 +459,7 @@ namespace Project_Milestone2_PRG282
             // btnResetStudent
             // 
             this.btnResetStudent.Location = new System.Drawing.Point(71, 475);
-            this.btnResetStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnResetStudent.Margin = new System.Windows.Forms.Padding(4);
             this.btnResetStudent.Name = "btnResetStudent";
             this.btnResetStudent.Size = new System.Drawing.Size(100, 28);
             this.btnResetStudent.TabIndex = 22;
@@ -470,7 +470,7 @@ namespace Project_Milestone2_PRG282
             // btnAddStudent
             // 
             this.btnAddStudent.Location = new System.Drawing.Point(208, 475);
-            this.btnAddStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddStudent.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(100, 28);
             this.btnAddStudent.TabIndex = 21;
@@ -503,7 +503,7 @@ namespace Project_Milestone2_PRG282
             // richAddress
             // 
             this.richAddress.Location = new System.Drawing.Point(137, 297);
-            this.richAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richAddress.Margin = new System.Windows.Forms.Padding(4);
             this.richAddress.Name = "richAddress";
             this.richAddress.Size = new System.Drawing.Size(169, 80);
             this.richAddress.TabIndex = 18;
@@ -535,7 +535,7 @@ namespace Project_Milestone2_PRG282
             // 
             this.dtDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDOB.Location = new System.Drawing.Point(137, 201);
-            this.dtDOB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtDOB.Margin = new System.Windows.Forms.Padding(4);
             this.dtDOB.Name = "dtDOB";
             this.dtDOB.Size = new System.Drawing.Size(132, 22);
             this.dtDOB.TabIndex = 13;
@@ -565,7 +565,7 @@ namespace Project_Milestone2_PRG282
             // picStudent
             // 
             this.picStudent.Location = new System.Drawing.Point(137, 118);
-            this.picStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picStudent.Margin = new System.Windows.Forms.Padding(4);
             this.picStudent.Name = "picStudent";
             this.picStudent.Size = new System.Drawing.Size(85, 75);
             this.picStudent.TabIndex = 10;
@@ -601,7 +601,7 @@ namespace Project_Milestone2_PRG282
             "Female",
             "Undefined"});
             this.cmbGender.Location = new System.Drawing.Point(137, 233);
-            this.cmbGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(93, 24);
             this.cmbGender.TabIndex = 7;
@@ -609,7 +609,7 @@ namespace Project_Milestone2_PRG282
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(137, 265);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(169, 22);
             this.txtPhone.TabIndex = 6;
@@ -628,7 +628,7 @@ namespace Project_Milestone2_PRG282
             // txtStudSurname
             // 
             this.txtStudSurname.Location = new System.Drawing.Point(137, 86);
-            this.txtStudSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStudSurname.Margin = new System.Windows.Forms.Padding(4);
             this.txtStudSurname.Name = "txtStudSurname";
             this.txtStudSurname.Size = new System.Drawing.Size(169, 22);
             this.txtStudSurname.TabIndex = 2;
@@ -636,7 +636,7 @@ namespace Project_Milestone2_PRG282
             // txtStudName
             // 
             this.txtStudName.Location = new System.Drawing.Point(137, 54);
-            this.txtStudName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStudName.Margin = new System.Windows.Forms.Padding(4);
             this.txtStudName.Name = "txtStudName";
             this.txtStudName.Size = new System.Drawing.Size(169, 22);
             this.txtStudName.TabIndex = 1;
@@ -644,7 +644,7 @@ namespace Project_Milestone2_PRG282
             // txtStudentNum
             // 
             this.txtStudentNum.Location = new System.Drawing.Point(137, 22);
-            this.txtStudentNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStudentNum.Margin = new System.Windows.Forms.Padding(4);
             this.txtStudentNum.Name = "txtStudentNum";
             this.txtStudentNum.ReadOnly = true;
             this.txtStudentNum.Size = new System.Drawing.Size(169, 22);
@@ -676,9 +676,9 @@ namespace Project_Milestone2_PRG282
             this.tabPage2.Controls.Add(this.edtStudNum);
             this.tabPage2.Controls.Add(this.PreviewPic);
             this.tabPage2.Location = new System.Drawing.Point(4, 14);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(355, 578);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update/Delete Student";
@@ -696,7 +696,7 @@ namespace Project_Milestone2_PRG282
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(228, 183);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(35, 23);
             this.button5.TabIndex = 45;
@@ -716,7 +716,7 @@ namespace Project_Milestone2_PRG282
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(75, 490);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 28);
             this.btnDelete.TabIndex = 43;
@@ -727,7 +727,7 @@ namespace Project_Milestone2_PRG282
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(215, 490);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
             this.btnUpdate.TabIndex = 41;
@@ -758,7 +758,7 @@ namespace Project_Milestone2_PRG282
             // redAddress
             // 
             this.redAddress.Location = new System.Drawing.Point(135, 310);
-            this.redAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.redAddress.Margin = new System.Windows.Forms.Padding(4);
             this.redAddress.Name = "redAddress";
             this.redAddress.Size = new System.Drawing.Size(169, 57);
             this.redAddress.TabIndex = 38;
@@ -788,7 +788,7 @@ namespace Project_Milestone2_PRG282
             // 
             this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDate.Location = new System.Drawing.Point(135, 214);
-            this.dtDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtDate.Name = "dtDate";
             this.dtDate.Size = new System.Drawing.Size(127, 22);
             this.dtDate.TabIndex = 34;
@@ -841,7 +841,7 @@ namespace Project_Milestone2_PRG282
             "Female",
             "Undefined"});
             this.cbbGender.Location = new System.Drawing.Point(135, 246);
-            this.cbbGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGender.Name = "cbbGender";
             this.cbbGender.Size = new System.Drawing.Size(93, 24);
             this.cbbGender.TabIndex = 28;
@@ -849,7 +849,7 @@ namespace Project_Milestone2_PRG282
             // edtPhone
             // 
             this.edtPhone.Location = new System.Drawing.Point(135, 278);
-            this.edtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.edtPhone.Name = "edtPhone";
             this.edtPhone.Size = new System.Drawing.Size(169, 22);
             this.edtPhone.TabIndex = 27;
@@ -867,7 +867,7 @@ namespace Project_Milestone2_PRG282
             // edtSurname
             // 
             this.edtSurname.Location = new System.Drawing.Point(135, 100);
-            this.edtSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtSurname.Margin = new System.Windows.Forms.Padding(4);
             this.edtSurname.Name = "edtSurname";
             this.edtSurname.Size = new System.Drawing.Size(169, 22);
             this.edtSurname.TabIndex = 25;
@@ -875,7 +875,7 @@ namespace Project_Milestone2_PRG282
             // edtName
             // 
             this.edtName.Location = new System.Drawing.Point(135, 68);
-            this.edtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtName.Margin = new System.Windows.Forms.Padding(4);
             this.edtName.Name = "edtName";
             this.edtName.Size = new System.Drawing.Size(169, 22);
             this.edtName.TabIndex = 24;
@@ -883,7 +883,7 @@ namespace Project_Milestone2_PRG282
             // edtStudNum
             // 
             this.edtStudNum.Location = new System.Drawing.Point(135, 36);
-            this.edtStudNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtStudNum.Margin = new System.Windows.Forms.Padding(4);
             this.edtStudNum.Name = "edtStudNum";
             this.edtStudNum.ReadOnly = true;
             this.edtStudNum.Size = new System.Drawing.Size(169, 22);
@@ -892,7 +892,7 @@ namespace Project_Milestone2_PRG282
             // PreviewPic
             // 
             this.PreviewPic.Location = new System.Drawing.Point(135, 132);
-            this.PreviewPic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PreviewPic.Margin = new System.Windows.Forms.Padding(4);
             this.PreviewPic.Name = "PreviewPic";
             this.PreviewPic.Size = new System.Drawing.Size(85, 75);
             this.PreviewPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -913,9 +913,9 @@ namespace Project_Milestone2_PRG282
             this.tabPage3.Controls.Add(this.txtMDescr_Inser);
             this.tabPage3.Controls.Add(this.txtMName_Insert);
             this.tabPage3.Location = new System.Drawing.Point(4, 14);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(355, 578);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Insert a Module";
@@ -923,7 +923,7 @@ namespace Project_Milestone2_PRG282
             // btnResetModuleInfo
             // 
             this.btnResetModuleInfo.Location = new System.Drawing.Point(56, 183);
-            this.btnResetModuleInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnResetModuleInfo.Margin = new System.Windows.Forms.Padding(4);
             this.btnResetModuleInfo.Name = "btnResetModuleInfo";
             this.btnResetModuleInfo.Size = new System.Drawing.Size(100, 28);
             this.btnResetModuleInfo.TabIndex = 41;
@@ -934,7 +934,7 @@ namespace Project_Milestone2_PRG282
             // btnAddModule
             // 
             this.btnAddModule.Location = new System.Drawing.Point(191, 183);
-            this.btnAddModule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddModule.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddModule.Name = "btnAddModule";
             this.btnAddModule.Size = new System.Drawing.Size(100, 28);
             this.btnAddModule.TabIndex = 40;
@@ -945,7 +945,7 @@ namespace Project_Milestone2_PRG282
             // txtMCode_Insert
             // 
             this.txtMCode_Insert.Location = new System.Drawing.Point(133, 28);
-            this.txtMCode_Insert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMCode_Insert.Margin = new System.Windows.Forms.Padding(4);
             this.txtMCode_Insert.Name = "txtMCode_Insert";
             this.txtMCode_Insert.Size = new System.Drawing.Size(169, 22);
             this.txtMCode_Insert.TabIndex = 39;
@@ -963,7 +963,7 @@ namespace Project_Milestone2_PRG282
             // txtMLink_Inser
             // 
             this.txtMLink_Inser.Location = new System.Drawing.Point(133, 124);
-            this.txtMLink_Inser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMLink_Inser.Margin = new System.Windows.Forms.Padding(4);
             this.txtMLink_Inser.Name = "txtMLink_Inser";
             this.txtMLink_Inser.Size = new System.Drawing.Size(169, 22);
             this.txtMLink_Inser.TabIndex = 37;
@@ -1001,7 +1001,7 @@ namespace Project_Milestone2_PRG282
             // txtMDescr_Inser
             // 
             this.txtMDescr_Inser.Location = new System.Drawing.Point(133, 92);
-            this.txtMDescr_Inser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMDescr_Inser.Margin = new System.Windows.Forms.Padding(4);
             this.txtMDescr_Inser.Name = "txtMDescr_Inser";
             this.txtMDescr_Inser.Size = new System.Drawing.Size(169, 22);
             this.txtMDescr_Inser.TabIndex = 33;
@@ -1009,7 +1009,7 @@ namespace Project_Milestone2_PRG282
             // txtMName_Insert
             // 
             this.txtMName_Insert.Location = new System.Drawing.Point(133, 60);
-            this.txtMName_Insert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMName_Insert.Margin = new System.Windows.Forms.Padding(4);
             this.txtMName_Insert.Name = "txtMName_Insert";
             this.txtMName_Insert.Size = new System.Drawing.Size(169, 22);
             this.txtMName_Insert.TabIndex = 32;
@@ -1028,9 +1028,9 @@ namespace Project_Milestone2_PRG282
             this.tbpUDModule.Controls.Add(this.txtMDescrp_UD);
             this.tbpUDModule.Controls.Add(this.txtMName_UD);
             this.tbpUDModule.Location = new System.Drawing.Point(4, 14);
-            this.tbpUDModule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpUDModule.Margin = new System.Windows.Forms.Padding(4);
             this.tbpUDModule.Name = "tbpUDModule";
-            this.tbpUDModule.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpUDModule.Padding = new System.Windows.Forms.Padding(4);
             this.tbpUDModule.Size = new System.Drawing.Size(355, 578);
             this.tbpUDModule.TabIndex = 3;
             this.tbpUDModule.Text = "Update/Delete Module";
@@ -1038,7 +1038,7 @@ namespace Project_Milestone2_PRG282
             // btnDeleteModule
             // 
             this.btnDeleteModule.Location = new System.Drawing.Point(59, 187);
-            this.btnDeleteModule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteModule.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteModule.Name = "btnDeleteModule";
             this.btnDeleteModule.Size = new System.Drawing.Size(100, 28);
             this.btnDeleteModule.TabIndex = 51;
@@ -1049,7 +1049,7 @@ namespace Project_Milestone2_PRG282
             // btnUpdateModule
             // 
             this.btnUpdateModule.Location = new System.Drawing.Point(199, 187);
-            this.btnUpdateModule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdateModule.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateModule.Name = "btnUpdateModule";
             this.btnUpdateModule.Size = new System.Drawing.Size(100, 28);
             this.btnUpdateModule.TabIndex = 50;
@@ -1060,10 +1060,11 @@ namespace Project_Milestone2_PRG282
             // txtMCode_UD
             // 
             this.txtMCode_UD.Location = new System.Drawing.Point(135, 31);
-            this.txtMCode_UD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMCode_UD.Margin = new System.Windows.Forms.Padding(4);
             this.txtMCode_UD.Name = "txtMCode_UD";
             this.txtMCode_UD.Size = new System.Drawing.Size(169, 22);
             this.txtMCode_UD.TabIndex = 49;
+            this.txtMCode_UD.Leave += new System.EventHandler(this.txtMCode_UD_Leave);
             // 
             // label25
             // 
@@ -1078,7 +1079,7 @@ namespace Project_Milestone2_PRG282
             // txtMLink_UD
             // 
             this.txtMLink_UD.Location = new System.Drawing.Point(135, 127);
-            this.txtMLink_UD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMLink_UD.Margin = new System.Windows.Forms.Padding(4);
             this.txtMLink_UD.Name = "txtMLink_UD";
             this.txtMLink_UD.Size = new System.Drawing.Size(169, 22);
             this.txtMLink_UD.TabIndex = 47;
@@ -1116,7 +1117,7 @@ namespace Project_Milestone2_PRG282
             // txtMDescrp_UD
             // 
             this.txtMDescrp_UD.Location = new System.Drawing.Point(135, 95);
-            this.txtMDescrp_UD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMDescrp_UD.Margin = new System.Windows.Forms.Padding(4);
             this.txtMDescrp_UD.Name = "txtMDescrp_UD";
             this.txtMDescrp_UD.Size = new System.Drawing.Size(169, 22);
             this.txtMDescrp_UD.TabIndex = 43;
@@ -1124,7 +1125,7 @@ namespace Project_Milestone2_PRG282
             // txtMName_UD
             // 
             this.txtMName_UD.Location = new System.Drawing.Point(135, 63);
-            this.txtMName_UD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMName_UD.Margin = new System.Windows.Forms.Padding(4);
             this.txtMName_UD.Name = "txtMName_UD";
             this.txtMName_UD.Size = new System.Drawing.Size(169, 22);
             this.txtMName_UD.TabIndex = 42;
@@ -1153,7 +1154,7 @@ namespace Project_Milestone2_PRG282
             this.panelNav.Controls.Add(this.btnLogout);
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelNav.Location = new System.Drawing.Point(0, 0);
-            this.panelNav.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelNav.Margin = new System.Windows.Forms.Padding(4);
             this.panelNav.Name = "panelNav";
             this.panelNav.Size = new System.Drawing.Size(461, 880);
             this.panelNav.TabIndex = 15;
@@ -1169,7 +1170,7 @@ namespace Project_Milestone2_PRG282
             this.btnEditModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditModule.ForeColor = System.Drawing.Color.Snow;
             this.btnEditModule.Location = new System.Drawing.Point(0, 528);
-            this.btnEditModule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditModule.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditModule.Name = "btnEditModule";
             this.btnEditModule.Size = new System.Drawing.Size(461, 135);
             this.btnEditModule.TabIndex = 16;
@@ -1188,7 +1189,7 @@ namespace Project_Milestone2_PRG282
             this.btnInsertModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertModule.ForeColor = System.Drawing.Color.Snow;
             this.btnInsertModule.Location = new System.Drawing.Point(0, 393);
-            this.btnInsertModule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInsertModule.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertModule.Name = "btnInsertModule";
             this.btnInsertModule.Size = new System.Drawing.Size(461, 135);
             this.btnInsertModule.TabIndex = 15;
@@ -1207,7 +1208,7 @@ namespace Project_Milestone2_PRG282
             this.btnEditStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditStudent.ForeColor = System.Drawing.Color.Snow;
             this.btnEditStudent.Location = new System.Drawing.Point(0, 258);
-            this.btnEditStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditStudent.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditStudent.Name = "btnEditStudent";
             this.btnEditStudent.Size = new System.Drawing.Size(461, 135);
             this.btnEditStudent.TabIndex = 14;
@@ -1226,7 +1227,7 @@ namespace Project_Milestone2_PRG282
             this.btnInsertStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertStudent.ForeColor = System.Drawing.Color.Snow;
             this.btnInsertStudent.Location = new System.Drawing.Point(0, 123);
-            this.btnInsertStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInsertStudent.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertStudent.Name = "btnInsertStudent";
             this.btnInsertStudent.Size = new System.Drawing.Size(461, 135);
             this.btnInsertStudent.TabIndex = 13;
@@ -1241,7 +1242,7 @@ namespace Project_Milestone2_PRG282
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(461, 123);
             this.panelLogo.TabIndex = 0;
@@ -1255,7 +1256,7 @@ namespace Project_Milestone2_PRG282
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.Snow;
             this.btnLogout.Location = new System.Drawing.Point(0, 791);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(461, 89);
             this.btnLogout.TabIndex = 12;
@@ -1272,7 +1273,7 @@ namespace Project_Milestone2_PRG282
             this.panelMain.Controls.Add(this.panelNav);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(4);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1957, 880);
             this.panelMain.TabIndex = 15;
@@ -1283,7 +1284,7 @@ namespace Project_Milestone2_PRG282
             this.panelHeader.Controls.Add(this.lblDisplayCRUD);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(461, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(4);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1496, 123);
             this.panelHeader.TabIndex = 15;
@@ -1293,7 +1294,7 @@ namespace Project_Milestone2_PRG282
             this.panelContent.Controls.Add(this.panelData);
             this.panelContent.Controls.Add(this.panelInfo);
             this.panelContent.Location = new System.Drawing.Point(461, 122);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(4);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(1460, 846);
             this.panelContent.TabIndex = 8;
@@ -1307,7 +1308,7 @@ namespace Project_Milestone2_PRG282
             this.ClientSize = new System.Drawing.Size(1957, 880);
             this.ControlBox = false;
             this.Controls.Add(this.panelMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1913, 811);
             this.Name = "MainForm";
             this.Text = "MainForm";

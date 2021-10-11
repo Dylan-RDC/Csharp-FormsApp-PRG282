@@ -182,6 +182,11 @@ namespace Project_Milestone2_PRG282.BusinessLayer
 
         }
 
+        public string UpdateModule(string oldMCode, string MCode, string Mname, string MDescription, string MLink)
+        {
+            DataHandler dh = new DataHandler();
+            return dh.UpdateModule(oldMCode, MCode, Mname, MDescription, MLink);
+        }
 
     }
 }
