@@ -561,9 +561,9 @@ namespace Project_Milestone2_PRG282
         {
             tabControl1.SelectedIndex = 0;
 
-            btnEditModule.BackColor = Color.FromArgb(119, 33, 64);
-            btnInsertModule.BackColor = Color.FromArgb(119, 33, 64);
-            btnEditStudent.BackColor = Color.FromArgb(119, 33, 64);
+            btnEditModule.BackColor = Color.FromArgb(50, 52, 77);
+            btnInsertModule.BackColor = Color.FromArgb(50, 52, 77);
+            btnEditStudent.BackColor = Color.FromArgb(50, 52, 77);
             btnInsertStudent.BackColor = Color.FromArgb(172, 46, 88);
 
 
@@ -574,20 +574,20 @@ namespace Project_Milestone2_PRG282
         {
             tabControl1.SelectedIndex = 1;
 
-            btnEditModule.BackColor = Color.FromArgb(119, 33, 64);
-            btnInsertModule.BackColor = Color.FromArgb(119, 33, 64);
+            btnEditModule.BackColor = Color.FromArgb(50, 52, 77);
+            btnInsertModule.BackColor = Color.FromArgb(50, 52, 77);
             btnEditStudent.BackColor = Color.FromArgb(172, 46, 88); 
-            btnInsertStudent.BackColor = Color.FromArgb(119, 33, 64);
+            btnInsertStudent.BackColor = Color.FromArgb(50, 52, 77);
         }
 
         private void btnInsertModule_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 2;
 
-            btnEditModule.BackColor = Color.FromArgb(119, 33, 64);
+            btnEditModule.BackColor = Color.FromArgb(50, 52, 77);
             btnInsertModule.BackColor = Color.FromArgb(172, 46, 88);
-            btnEditStudent.BackColor = Color.FromArgb(119, 33, 64);
-            btnInsertStudent.BackColor = Color.FromArgb(119, 33, 64);
+            btnEditStudent.BackColor = Color.FromArgb(50, 52, 77);
+            btnInsertStudent.BackColor = Color.FromArgb(50, 52, 77);
         }
 
         private void btnEditModule_Click(object sender, EventArgs e)
@@ -595,9 +595,9 @@ namespace Project_Milestone2_PRG282
             tabControl1.SelectedIndex = 3;
 
             btnEditModule.BackColor = Color.FromArgb(172, 46, 88);
-            btnInsertModule.BackColor = Color.FromArgb(119, 33, 64);
-            btnEditStudent.BackColor = Color.FromArgb(119, 33, 64);
-            btnInsertStudent.BackColor = Color.FromArgb(119, 33, 64);
+            btnInsertModule.BackColor = Color.FromArgb(50, 52, 77);
+            btnEditStudent.BackColor = Color.FromArgb(50, 52, 77);
+            btnInsertStudent.BackColor = Color.FromArgb(50, 52, 77);
         }
 
         private void button1_Click(object sender, EventArgs e)

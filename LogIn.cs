@@ -130,5 +130,36 @@ namespace Project_Milestone2_PRG282
 
             Environment.Exit(0);
         }
+
+        private void tcLogIn_TabIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSignInscreen_Click(object sender, EventArgs e)
+        {
+            btnSignInscreen.BackColor = Color.FromArgb(172, 46, 88);
+            btnSignUpScreen.BackColor = Color.FromArgb(50, 52, 77);
+            lblDisplayLogIn.Text = "Sign In";
+            tcLogIn.SelectedIndex = 0;
+        }
+
+        private void btnSignUpScreen_Click(object sender, EventArgs e)
+        {
+            btnSignUpScreen.BackColor = Color.FromArgb(172, 46, 88);
+            btnSignInscreen.BackColor = Color.FromArgb(50, 52, 77);
+            lblDisplayLogIn.Text = "Create an account";
+            tcLogIn.SelectedIndex = 1;
+        }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
