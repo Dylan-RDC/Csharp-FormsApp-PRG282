@@ -433,7 +433,7 @@ namespace Project_Milestone2_PRG282
             this.checkedListBox1.Location = new System.Drawing.Point(137, 389);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(169, 55);
+            this.checkedListBox1.Size = new System.Drawing.Size(169, 89);
             this.checkedListBox1.TabIndex = 27;
             // 
             // lblFilePath
@@ -459,7 +459,7 @@ namespace Project_Milestone2_PRG282
             // 
             // btnResetStudent
             // 
-            this.btnResetStudent.Location = new System.Drawing.Point(71, 475);
+            this.btnResetStudent.Location = new System.Drawing.Point(68, 497);
             this.btnResetStudent.Margin = new System.Windows.Forms.Padding(4);
             this.btnResetStudent.Name = "btnResetStudent";
             this.btnResetStudent.Size = new System.Drawing.Size(100, 28);
@@ -470,7 +470,7 @@ namespace Project_Milestone2_PRG282
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(208, 475);
+            this.btnAddStudent.Location = new System.Drawing.Point(206, 497);
             this.btnAddStudent.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(100, 28);

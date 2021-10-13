@@ -31,8 +31,7 @@ namespace Project_Milestone2_PRG282
         FileMethods fh = new FileMethods();
         private void MainForm_Load(object sender, EventArgs e)
         {
-       
-            
+           
 
             dgvDisplay.DefaultCellStyle.SelectionBackColor = Color.FromArgb(125, 197, 196); ;
             DisplayStudents();
@@ -192,10 +191,15 @@ namespace Project_Milestone2_PRG282
                     {
                         if (checkedListBox1.GetItemChecked(i))
                         {
+                            MessageBox.Show(checkedListBox1.Items[i].ToString());
                             Mods.Add(checkedListBox1.Items[i].ToString());
                         }
                     }
-                    StudentModule studMod = new StudentModule(int.Parse(tempStud.StudNumber), Mods);
+
+                    List<Student> studs = fh.getStudent();
+                    string newStudID = studs[studs.Count - 1].StudNumber;
+
+                    StudentModule studMod = new StudentModule(int.Parse(newStudID), Mods);
                     studMod.sendInsertToDataHandler();
 
                     DisplayStudents(); //---------------------------------------------------------------------------------------------------------------------------------------------------------------
